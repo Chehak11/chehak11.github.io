@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lead-Screw Gripper · Chehak Aggarwal</title>
+<meta name="description" content="A lead-screw-driven robotic gripper with mirrored four-bar linkages, adapted and modeled in Onshape.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="../index.html">CHEHAK AGGARWAL</a>
+    <div class="links"><a href="../index.html#projects">Projects</a><a href="../about.html">About</a><a href="../resume.pdf" target="_blank" rel="noopener">Résumé ↗</a><a href="../portfolio.pdf" target="_blank" rel="noopener">Portfolio PDF ↗</a><a href="../index.html#contact">Contact</a></div>
+  </nav>
+
+  <header class="phead">
+    <div class="l">
+      <div class="tag">DWG 04 · Adapted design · CAD + motion study</div>
+      <h1>Lead-screw robotic gripper</h1>
+      <p>A two-finger gripper in which a central lead screw drives mirrored four-bar linkages to close the fingertips. I adapted an existing design and modeled it in Onshape as a Yonder Dynamics design task.</p>
+    </div>
+    <div class="tb">
+      <div><b>ROLE</b><span>Adapted &amp; modeled</span></div>
+      <div><b>CONTEXT</b><span>Yonder Dynamics design task</span></div>
+      <div><b>DATE</b><span>Oct 2026</span></div>
+      <div><b>TOOLS</b><span>Onshape</span></div>
+      <div><b>STATUS</b><span>CAD + motion study · not manufactured</span></div>
+    </div>
+  </header>
+  <div class="hero-fig"><figure class="fig" data-label="Gripper motion study video" data-file="gripper-motion.mp4"><video controls muted loop playsinline poster="../images/gripper-render.png"><source src="../images/gripper-motion.mp4" type="video/mp4"></video></figure></div>
+
+  <div class="doc">
+    <nav class="toc"><a href="#how">How it works</a><a href="#why">Why a lead screw</a><a href="#role">My role</a><a href="#next">Next</a></nav>
+    <main>
+      <section class="sec" id="how">
+        <h2>How it works</h2>
+        <p>A motor turns the central lead screw, which drives a carriage up and down. The carriage pushes mirrored four-bar linkages on either side, which swing the two triangular fingertips together or apart.</p>
+        <div class="figs one"><figure class="fig" data-label="Gripper render" data-file="gripper-render.png"><img src="../images/gripper-render.png" alt="Front view of the lead-screw gripper showing the four-bar linkages and central screw"></figure></div>
+        <figcaption>Front view: the central lead screw and the mirrored linkages, mounted on the wrist housing.</figcaption>
+      </section>
+
+      <section class="sec" id="why">
+        <h2>Why a lead screw</h2>
+        <ul>
+          <li><b>Mechanical advantage:</b> a lead screw turns a small motor torque into a large linear force, so a small motor can still grip firmly.</li>
+          <li><b>Holding without power:</b> a lead screw with a low enough lead angle is self-locking, so the gripper stays closed when the motor is off.</li>
+          <li><b>Trade-off:</b> it closes slowly compared with a direct servo drive. That's fine for picking up samples, but not for fast grabs.</li>
+        </ul>
+      </section>
+
+      <section class="sec" id="role">
+        <h2>My role</h2>
+        <p>The concept is an existing design. I adapted it, modeled it in Onshape, and built the motion study. It hasn't been manufactured.</p>
+      </section>
+
+      <section class="sec" id="next">
+        <h2>Next</h2>
+        <ul>
+          <li>Plot jaw opening against lead-screw travel from the motion study.</li>
+          <li>Estimate fingertip force from screw torque, screw efficiency and the linkage's mechanical advantage.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <footer class="foot"><a href="../index.html">← All projects</a><a href="mailto:agg.chehak@gmail.com">agg.chehak@gmail.com</a></footer>
+</div>
+<script src="../assets/main.js"></script>
+</body>
+</html>

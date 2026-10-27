@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arctic Surface Vessel · Chehak Aggarwal</title>
+<meta name="description" content="Pontoon frame, LiDAR mount and pool testing for Yonder Deep's autonomous Arctic surface vessel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="../index.html">CHEHAK AGGARWAL</a>
+    <div class="links"><a href="../index.html#projects">Projects</a><a href="../about.html">About</a><a href="../resume.pdf" target="_blank" rel="noopener">Résumé ↗</a><a href="../portfolio.pdf" target="_blank" rel="noopener">Portfolio PDF ↗</a><a href="../index.html#contact">Contact</a></div>
+  </nav>
+
+  <header class="phead">
+    <div class="l">
+      <div class="tag">DWG 03 · Yonder Deep · Autonomous surface vessel</div>
+      <h1>Arctic surface vessel: frame, sensor mount, pool tests</h1>
+      <p>Yonder Deep is building an autonomous surface vessel (USV) to collect underwater acoustic data with a hydrophone in the Arctic Ocean. I work on its structure and sensor integration, and helped run its first pool tests.</p>
+    </div>
+    <div class="tb">
+      <div><b>ROLE</b><span>Mechanical Team Member</span></div>
+      <div><b>DATES</b><span>Nov 2025 – Present</span></div>
+      <div><b>MY PARTS</b><span>Frame (co-design) · LiDAR mount</span></div>
+      <div><b>TOOLS</b><span>Fusion 360 · 3D printing</span></div>
+      <div><b>STATUS</b><span>Pool tested (preliminary rig)</span></div>
+    </div>
+  </header>
+  <div class="hero-fig"><figure class="fig" data-label="USV frame and pontoons render" data-file="usv-frame.png"><img src="../images/usv-frame.png" alt="USV aluminum frame on two pontoons, CAD render"></figure></div>
+
+  <div class="doc">
+    <nav class="toc">
+      <a href="#frame">1 · Pontoon frame</a><a href="#lidar">2 · LiDAR mount</a><a href="#pool">3 · Pool tests</a><a href="#trades">4 · Trade studies</a><a href="#next">What I'd change</a>
+    </nav>
+    <main>
+      <section class="sec" id="frame">
+        <h2>1 · Pontoon frame: co-designed</h2>
+        <p>The frame joins the two pontoons and carries every payload: sensors, electronics and thrusters. I co-designed it with another mechanical team member, through many review rounds with the whole team.</p>
+        <table class="spec">
+          <tr><td>Material</td><td>6061-T6 aluminum (marine grade)</td></tr>
+          <tr><td>Joining</td><td>Welded and bolted</td></tr>
+          <tr><td>Pontoon draft target</td><td>≈ 5 cm</td></tr>
+          <tr><td>Design driver</td><td>Modular, for quick field disassembly, cleaning and upgrades</td></tr>
+        </table>
+      </section>
+
+      <section class="sec" id="lidar">
+        <h2>2 · LiDAR mount: designed</h2>
+        <p>The vessel needed a LiDAR for perception and navigation, and no mount existed. I designed one in Fusion 360 that attaches to the frame, keeps the sensor stable, and gives it a clear field of view in a marine environment.</p>
+        <div class="figs">
+          <figure class="fig" data-label="LiDAR mount, close-up" data-file="lidar-mount.png"><img src="../images/lidar-mount.png" alt="LiDAR mount CAD close-up"></figure>
+          <figure class="fig" data-label="LiDAR mount on frame" data-file="lidar-on-frame.png"><img src="../images/lidar-on-frame.png" alt="LiDAR mount installed on the USV frame"></figure>
+        </div>
+      </section>
+
+      <section class="sec" id="pool">
+        <h2>3 · Pool tests: supported</h2>
+        <p>Before the full vessel was built, the team pool-tested a preliminary rig: a plank carrying the electronics box and foam flotation, with thrusters in an <b>X configuration</b>.</p>
+        <ul>
+          <li><b>What we checked:</b> buoyancy, power draw, and whether thruster noise would drown out the hydrophone. It didn't.</li>
+          <li><b>Test 1:</b> one motor failed.</li>
+          <li><b>Test 2:</b> all four thrusters worked, and the rig drove to the end of the pool, turned around and came back.</li>
+        </ul>
+        <div class="figs one"><figure class="fig" data-label="Pool test photo or video still" data-file="pool-test.jpg"><img src="../images/pool-test.jpg" alt="Preliminary USV rig during pool testing"></figure></div>
+      </section>
+
+      <section class="sec" id="trades">
+        <h2>4 · Trade studies: contributed</h2>
+        <ul>
+          <li>Waterproof electrical enclosure: IP rating, corrosion resistance, size.</li>
+          <li>Thruster orientation, LiDAR placement, mass distribution, and recovering from a flip in rough seas.</li>
+        </ul>
+        <p>I also 3D printed functional parts, tuning print orientation and temperature for strength and accuracy.</p>
+      </section>
+
+      <section class="sec" id="next">
+        <h2>What I'd change</h2>
+        <ul>
+          <li>Do a hand calculation of buoyancy and draft for the full payload before the frame goes to welding.</li>
+          <li>Log thrust and power numbers in the next pool test so the results are numbers, not observations.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <footer class="foot"><a href="../index.html">← All projects</a><a href="mailto:agg.chehak@gmail.com">agg.chehak@gmail.com</a></footer>
+</div>
+<script src="../assets/main.js"></script>
+</body>
+</html>

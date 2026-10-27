@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JELIX · Chehak Aggarwal</title>
+<meta name="description" content="JELIX: a jellyfish-inspired, cam-driven underwater propulsion mechanism designed in CATIA V5 and simulated in MSC ADAMS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="../index.html">CHEHAK AGGARWAL</a>
+    <div class="links"><a href="../index.html#projects">Projects</a><a href="../about.html">About</a><a href="../resume.pdf" target="_blank" rel="noopener">Résumé ↗</a><a href="../portfolio.pdf" target="_blank" rel="noopener">Portfolio PDF ↗</a><a href="../index.html#contact">Contact</a></div>
+  </nav>
+
+  <header class="phead">
+    <div class="l">
+      <div class="tag">DWG 01 · Research · Design &amp; simulation study</div>
+      <h1>JELIX: jellyfish-inspired underwater propulsion</h1>
+      <p>A propeller-free propulsion mechanism for small underwater vehicles. A cam–follower drive with spring return snaps four ribs inward to push out a jet of water, copying the pulse of the fried-egg jellyfish (<i>Cotylorhiza tuberculata</i>).</p>
+    </div>
+    <div class="tb">
+      <div><b>ROLE</b><span>Solo design &amp; analysis</span></div>
+      <div><b>ORG</b><span>Genex Space (unpaid research)</span></div>
+      <div><b>SUPERVISOR</b><span>Theja K V</span></div>
+      <div><b>DATES</b><span>Jun 2024 – Jul 2025</span></div>
+      <div><b>TOOLS</b><span>CATIA V5 · MSC ADAMS</span></div>
+      <div><b>STATUS</b><span>Simulated · not yet built</span></div>
+    </div>
+  </header>
+  <div class="hero-fig"><figure class="fig" data-label="JELIX labeled cutaway (system architecture)" data-file="jelix-labeled.png"><img src="../images/jelix-labeled.png" alt="Labeled JELIX cutaway: piston head, motor mount, follower, cam, bevel gear, waterproof seal"></figure></div>
+
+  <div class="doc">
+    <nav class="toc">
+      <a href="#problem">Problem</a><a href="#constraints">Constraints</a><a href="#role">My role</a><a href="#design">Design</a>
+      <a href="#analysis">Analysis</a><a href="#test">Build &amp; test</a><a href="#result">Result</a><a href="#next">What I'd change</a>
+    </nav>
+    <main>
+      <section class="sec" id="problem">
+        <h2>Problem</h2>
+        <p>Jellyfish move by pulsing: they contract their bell to push out a jet of water, then relax. I wanted to know whether a simple <b>mechanical</b> linkage could reproduce that pulse well enough to propel a small underwater vehicle, as an alternative to a propeller.</p>
+      </section>
+
+      <section class="sec" id="constraints">
+        <h2>Constraints</h2>
+        <ul>
+          <li>Low electrical complexity: one motor, no smart materials.</li>
+          <li>Easy to manufacture and scale; modular segments.</li>
+          <li>Fast contraction with a slow recovery, since the thrust comes from the contraction stroke.</li>
+        </ul>
+      </section>
+
+      <section class="sec" id="role">
+        <h2>My role</h2>
+        <p>Everything on this page was my own work: concept, mechanism design, CAD, simulation and the force model. Theja K V at Genex Space supervised, and I wrote the work up as a research paper submitted to Genex.</p>
+      </section>
+
+      <section class="sec" id="design">
+        <h2>Design</h2>
+        <p>The vehicle has an upper <b>buoyancy segment</b> and a lower <b>propulsion segment</b>. A motor turns a cam through a gear train. Each rib is a pivoted follower riding on the cam.</p>
+        <ul>
+          <li><b>Expansion phase:</b> the cam slowly raises the ribs and compresses the springs, storing energy.</li>
+          <li><b>Contraction phase:</b> the cam profile drops suddenly, the springs release, and the ribs snap back and push a jet of water out.</li>
+        </ul>
+        <div class="figs one"><figure class="fig" data-label="Mechanism schematic, phases (a)–(e)" data-file="jelix-mechanism.png"><img src="../images/jelix-mechanism.png" alt="Schematic of the JELIX concept and rib motion through the expansion and contraction phases"></figure></div>
+        <figcaption>(a) Concept schematic. (b)–(c) Expansion phase. (d) End of expansion. (e) Contraction, the thrust stroke.</figcaption>
+        <h3>Why a cam instead of smart materials?</h3>
+        <p>Shape-memory alloys and other smart materials can mimic a bell, but they need higher voltages and more complex control. A cam gives a repeatable, tunable motion from one motor, and it's easier to build and maintain in the field.</p>
+      </section>
+
+      <section class="sec" id="analysis">
+        <h2>Analysis</h2>
+        <ul>
+          <li>Designed the cam profile in <b>CATIA V5</b>, defining follower displacement at 10° increments of cam rotation.</li>
+          <li>Exported the geometry to <b>MSC ADAMS</b> and ran a multibody simulation at a 5 rpm input over 24 s (two full cycles).</li>
+          <li>Measured the rib tip's linear (X, Y) and angular displacement, velocity and acceleration.</li>
+        </ul>
+        <table class="spec">
+          <tr><td>Max X displacement (rib tip)</td><td>≈ 65 mm</td></tr>
+          <tr><td>Max Y displacement (rib tip)</td><td>≈ 80 mm</td></tr>
+          <tr><td>Angular stroke</td><td>0° – 40°</td></tr>
+          <tr><td>Cycle period</td><td>≈ 12 s (5 rpm input)</td></tr>
+        </table>
+        <div class="figs one"><figure class="fig" data-label="ADAMS displacement / velocity / acceleration plots" data-file="jelix-adams-plots.png"><img src="../images/jelix-adams-plots.png" alt="MSC ADAMS simulation plots of rib-tip displacement, velocity and acceleration over 24 seconds"></figure></div>
+        <figcaption>MSC ADAMS simulation over two 12 s cycles. A moving-average filter smooths numerical noise caused by using gravity, not a modeled spring, to return the rib.</figcaption>
+        <h3>Free-body force model</h3>
+        <p>I modeled the net force normal to each rib and split it into horizontal (F<sub>x</sub>) and vertical (F<sub>y</sub>) components across the stroke. F<sub>y</sub> is the component that produces thrust, so the rib angle during the fast contraction sets how much of each stroke becomes forward push.</p>
+        <div class="figs one"><figure class="fig" data-label="Free-body diagram of rib forces" data-file="jelix-fbd.png"><img src="../images/jelix-fbd.png" alt="Free-body diagram showing net force and its components on each rib"></figure></div>
+      </section>
+
+      <section class="sec" id="test">
+        <h2>Build &amp; test</h2>
+        <div class="note"><b>Not built yet.</b> JELIX is a design and simulation study. No physical prototype has been made, and no thrust has been measured.</div>
+      </section>
+
+      <section class="sec" id="result">
+        <h2>Result</h2>
+        <p>The simulation confirmed that the cam produces the intended slow-expand, fast-contract motion: a 0–40° rib stroke with about 80 mm of tip travel, repeating every 12 s. It also showed what the model leaves out: spring dynamics and the water itself.</p>
+      </section>
+
+      <section class="sec" id="next">
+        <h2>What I'd change</h2>
+        <ul>
+          <li>Model the return springs instead of relying on gravity. That removes the simulation noise and lets me size the springs properly.</li>
+          <li>Add hydrodynamics (CFD, or a simple jet-impulse estimate) to predict thrust per stroke.</li>
+          <li>Print a one-rib benchtop rig and compare its measured motion against the ADAMS results.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <footer class="foot"><a href="../index.html">← All projects</a><a href="mailto:agg.chehak@gmail.com">agg.chehak@gmail.com</a></footer>
+</div>
+<script src="../assets/main.js"></script>
+</body>
+</html>

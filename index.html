@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chehak Aggarwal · Mechanical Design & Robotics</title>
+<meta name="description" content="Chehak Aggarwal: Aerospace Engineering student at UC San Diego designing mechanisms for robots and vehicles in harsh environments: Mars rover arm, Arctic surface vessel, jellyfish-inspired propulsion.">
+<meta property="og:title" content="Chehak Aggarwal · Mechanical Design & Robotics">
+<meta property="og:description" content="Mars rover arm · Arctic surface vessel · Bio-inspired underwater propulsion">
+<meta property="og:image" content="images/gripper-render.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="index.html">CHEHAK AGGARWAL</a>
+    <div class="links">
+      <a href="#projects">Projects</a>
+      <a href="about.html">About</a>
+      <a href="resume.pdf" target="_blank" rel="noopener">Résumé ↗</a><a href="portfolio.pdf" target="_blank" rel="noopener">Portfolio PDF ↗</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="quick" aria-label="Quick links">
+    <span class="q"><b>In a hurry?</b> Everything in one click →</span>
+    <div class="links">
+      <a class="btn p" href="resume.pdf" target="_blank" rel="noopener">Résumé · PDF ↗</a>
+      <a class="btn p" href="portfolio.pdf" target="_blank" rel="noopener">Portfolio · PDF ↗</a>
+      <a class="btn" href="https://www.linkedin.com/in/chehak-aggarwal/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </section>
+
+  <header class="hero">
+    <div class="l">
+      <div class="tag">Mechanical design · Robotics · Harsh environments</div>
+      <h1>I design mechanisms for robots that work where people can't.</h1>
+      <p>Aerospace Engineering student at UC San Diego. I design hardware for a Mars rover and an Arctic surface vessel, and I designed and simulated a jellyfish-inspired underwater propulsion mechanism.</p>
+      <div class="ctas">
+        <a class="btn p" href="#projects">View projects ↓</a>
+        <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+        <a class="btn" href="https://www.linkedin.com/in/chehak-aggarwal/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="tb">
+      <div><b>SCHOOL</b><span>UC San Diego</span></div>
+      <div><b>MAJOR</b><span>B.S. Aerospace Eng.</span></div>
+      <div><b>GRAD</b><span>June 2029 · GPA 3.9</span></div>
+      <div><b>CAD / SIM</b><span>Onshape · CATIA · Fusion 360 · ADAMS · FEA</span></div>
+      <div><b>SEEKING</b><span>Mech. design &amp; robotics internships, research</span></div>
+    </div>
+  </header>
+
+  <div class="label" id="projects">01 · Featured</div>
+  <a class="feat" href="projects/jelix.html" style="text-decoration:none">
+    <figure class="fig" data-label="JELIX cutaway render" data-file="jelix-cutaway.png"><img src="images/jelix-cutaway.png" alt="JELIX underwater vehicle cutaway render showing the cam-follower propulsion mechanism"></figure>
+    <div class="body">
+      <div class="tag">DWG 01 · Research · Genex Space</div>
+      <h3>JELIX: jellyfish-inspired underwater propulsion</h3>
+      <p>A propeller-free propulsion mechanism. A cam–follower drive with spring return snaps four ribs to push out a jet of water, the way a jellyfish pulses. I designed the cam in CATIA V5 and simulated the motion in MSC ADAMS.</p>
+      <div class="stats">
+        <div><strong>80 mm</strong><span>rib-tip travel (sim)</span></div>
+        <div><strong>0–40°</strong><span>rib stroke</span></div>
+        <div><strong>12 s</strong><span>cycle at 5 rpm</span></div>
+        <div><strong>Sim</strong><span>design &amp; simulation study</span></div>
+      </div>
+      <div class="chips"><span>CATIA V5</span><span>MSC ADAMS</span><span>Kinematics</span><span>Free-body model</span></div>
+      <span class="btn p" style="align-self:flex-start">Read the case study →</span>
+    </div>
+  </a>
+
+  <div class="label">02 · Team engineering</div>
+  <div class="grid">
+    <a class="card" href="projects/rover-arm.html">
+      <figure class="fig" data-label="Science claw render" data-file="claw-render.png"><img src="images/claw-render.png" alt="Rover science claw and hand CAD render"></figure>
+      <div class="body">
+        <div class="tag">DWG 02 · Yonder Dynamics · URC 2026</div>
+        <h3>Mars rover arm: science claw &amp; electronics enclosure</h3>
+        <ul>
+          <li>Four-bar, dual-servo claw that collected samples at URC 2026</li>
+          <li>Forearm enclosure redesigned: 178 → 216 mm (+21%)</li>
+          <li>FEA support on the elbow joint</li>
+        </ul>
+      </div>
+      <div class="cardfoot"><div><b>ROLE</b>Mech. design</div><div><b>TOOLS</b>Onshape · FEA</div><div><b>STATUS</b>Claw built, used</div></div>
+    </a>
+    <a class="card" href="projects/arctic-usv.html">
+      <figure class="fig" data-label="USV frame render" data-file="usv-frame.png"><img src="images/usv-frame.png" alt="Arctic surface vessel frame and pontoons CAD render"></figure>
+      <div class="body">
+        <div class="tag">DWG 03 · Yonder Deep · Arctic USV</div>
+        <h3>Arctic surface vessel: frame, sensor mount, pool tests</h3>
+        <ul>
+          <li>Co-designed 6061-T6 aluminum pontoon frame</li>
+          <li>LiDAR mount designed in Fusion 360</li>
+          <li>Two pool tests: buoyancy, power, hydrophone noise</li>
+        </ul>
+      </div>
+      <div class="cardfoot"><div><b>ROLE</b>Co-design · test</div><div><b>TOOLS</b>Fusion 360</div><div><b>STATUS</b>Pool tested</div></div>
+    </a>
+    <a class="card" href="projects/gripper.html">
+      <figure class="fig" data-label="Gripper render" data-file="gripper-render.png"><img src="images/gripper-render.png" alt="Lead-screw robotic gripper with four-bar linkages, CAD render"></figure>
+      <div class="body">
+        <div class="tag">DWG 04 · Adapted design · Onshape</div>
+        <h3>Lead-screw robotic gripper</h3>
+        <ul>
+          <li>Central lead screw drives mirrored four-bar linkages</li>
+          <li>Adapted and modeled in Onshape as a team design task</li>
+          <li>Motion study and render</li>
+        </ul>
+      </div>
+      <div class="cardfoot"><div><b>ROLE</b>Adapted · modeled</div><div><b>TOOLS</b>Onshape</div><div><b>STATUS</b>CAD + motion sim</div></div>
+    </a>
+    <div class="card">
+      <div class="body">
+        <div class="tag">Also</div>
+        <h3>Other work</h3>
+        <div class="rows" style="border:0">
+          <div><span class="k">NASA HuLC 2026</span><span>Co-researched and co-wrote T-PANS, a tunable viscoelastic damping concept for life-support noise on crewed lunar missions; I wrote the Design Rationale &amp; Value section.</span></div>
+          <div><span class="k">AIAA UCSD</span><span>Project Coordinator: recruited 32 students from 57+ applicants onto four NASA competition teams.</span></div>
+          <div><span class="k">Big Data Rhino</span><span>Intern, summer 2026: Python analysis of satellite data for proof-of-concept products.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="foot" id="contact">
+    <a href="mailto:agg.chehak@gmail.com">agg.chehak@gmail.com</a>
+    <a href="https://www.linkedin.com/in/chehak-aggarwal/" target="_blank" rel="noopener">linkedin.com/in/chehak-aggarwal</a>
+    <span class="muted">REV B · 2026</span>
+  </footer>
+</div>
+<script src="assets/main.js"></script>
+</body>
+</html>

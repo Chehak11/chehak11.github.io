@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mars Rover Arm · Chehak Aggarwal</title>
+<meta name="description" content="Science claw and forearm electronics enclosure for the Yonder Dynamics Mars rover (University Rover Challenge 2026).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="../index.html">CHEHAK AGGARWAL</a>
+    <div class="links"><a href="../index.html#projects">Projects</a><a href="../about.html">About</a><a href="../resume.pdf" target="_blank" rel="noopener">Résumé ↗</a><a href="../portfolio.pdf" target="_blank" rel="noopener">Portfolio PDF ↗</a><a href="../index.html#contact">Contact</a></div>
+  </nav>
+
+  <header class="phead">
+    <div class="l">
+      <div class="tag">DWG 02 · Yonder Dynamics · University Rover Challenge</div>
+      <h1>Mars rover arm: science claw &amp; electronics enclosure</h1>
+      <p>Yonder Dynamics is UC San Diego's Mars rover team, competing in the University Rover Challenge (URC). On the mechanical team, I own two parts of the robotic arm and support its structural analysis.</p>
+    </div>
+    <div class="tb">
+      <div><b>ROLE</b><span>Mechanical Team Member</span></div>
+      <div><b>DATES</b><span>Nov 2025 – Present</span></div>
+      <div><b>MY PARTS</b><span>Science claw · forearm enclosure</span></div>
+      <div><b>TOOLS</b><span>Onshape · FEA · 3D printing</span></div>
+      <div><b>STATUS</b><span>Claw used at URC 2026</span></div>
+    </div>
+  </header>
+  <div class="hero-fig"><figure class="fig" data-label="Rover arm, labeled: hand / differential wrist / electrical box / forearm" data-file="rover-arm-labeled.png"><img src="../images/rover-arm-labeled.png" alt="Rover arm CAD with labeled hand, differential wrist, electrical box and forearm"></figure></div>
+
+  <div class="doc">
+    <nav class="toc">
+      <a href="#claw">1 · Science claw</a><a href="#enclosure">2 · Forearm enclosure</a><a href="#fea">3 · Elbow FEA</a><a href="#next">What I'd change</a>
+    </nav>
+    <main>
+      <section class="sec" id="claw">
+        <h2>1 · Science claw: designed, built, used at URC 2026</h2>
+        <h3>Problem</h3>
+        <p>The old end effector was hard to swap and was mounted inefficiently on the rover's hand. The science tasks at URC need a claw that grips irregular rock and soil samples.</p>
+        <h3>Constraints</h3>
+        <ul>
+          <li>Bolt directly onto the existing hand's bolt pattern.</li>
+          <li>Jaw geometry that holds irregular samples.</li>
+          <li>Light enough for the arm's torque limits; quick to assemble and repair.</li>
+        </ul>
+        <h3>Design</h3>
+        <p>A <b>four-bar linkage</b> driven by <b>two servos</b>, with <b>replaceable fingers</b> so damaged or task-specific fingers can be swapped in the field without removing the claw.</p>
+        <div class="figs">
+          <figure class="fig" data-label="Claw + hand render" data-file="claw-render.png"><img src="../images/claw-render.png" alt="Science claw and hand CAD render"></figure>
+          <figure class="fig" data-label="Claw photo (built)" data-file="claw-photo.jpg"><img src="../images/claw-photo.jpg" alt="Photo of the built science claw"></figure>
+        </div>
+        <h3>Result</h3>
+        <p>The claw was built and mounted on the forearm, and the team used it to collect geological samples at the University Rover Challenge 2026.</p>
+      </section>
+
+      <section class="sec" id="enclosure">
+        <h2>2 · Forearm electronics enclosure: redesign</h2>
+        <h3>Problem</h3>
+        <p>The arm moved to a new ODrive motor controller and fuse board, and the old enclosure was too small. Cramped wiring caused mechanical interference, pressed on the fuse board until it shifted, and made servicing hard.</p>
+        <h3>What I changed</h3>
+        <table class="spec">
+          <tr><td>Length</td><td>178 mm → 216 mm (+21%)</td></tr>
+          <tr><td>Wall thickness</td><td>3 mm, thinned where possible to recover internal volume</td></tr>
+          <tr><td>Cable exit</td><td>Enlarged to respect cable bend radius and cut strain</td></tr>
+          <tr><td>Cap</td><td>Taller, for stacked wiring</td></tr>
+        </table>
+        <div class="figs">
+          <figure class="fig" data-label="Enclosure open: ODrive + fuse board layout" data-file="enclosure-open.png"><img src="../images/enclosure-open.png" alt="Top view of the open enclosure with the ODrive and fuse board"></figure>
+          <figure class="fig" data-label="Enclosure closed" data-file="enclosure-closed.png"><img src="../images/enclosure-closed.png" alt="Closed forearm enclosure render"></figure>
+        </div>
+        <h3>Status</h3>
+        <div class="note">A PLA prototype was printed as a backup but never installed, because the team decided to redesign the whole arm module.</div>
+      </section>
+
+      <section class="sec" id="fea">
+        <h2>3 · Elbow joint FEA: analysis support</h2>
+        <p>A teammate designed a new elbow joint, and I ran the static FEA (von Mises stress) to check it under arm-manipulation loads. The results showed stress concentrations at the mounting interfaces.</p>
+        <div class="figs one"><figure class="fig" data-label="Elbow von Mises stress plot" data-file="fea-elbow.png"><img src="../images/fea-elbow.png" alt="Von Mises stress plot of the elbow joint"></figure></div>
+      </section>
+
+      <section class="sec" id="next">
+        <h2>What I'd change</h2>
+        <ul>
+          <li>Log the claw's grip force and the masses of the samples it picked up, so its performance is measured rather than described.</li>
+          <li>Run the enclosure through a quick fit check with the real wiring harness before the final print.</li>
+          <li>Report the FEA with its full setup (material, load case, constraints) and a safety factor.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <footer class="foot"><a href="../index.html">← All projects</a><a href="mailto:agg.chehak@gmail.com">agg.chehak@gmail.com</a></footer>
+</div>
+<script src="../assets/main.js"></script>
+</body>
+</html>

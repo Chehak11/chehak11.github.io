@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Chehak Aggarwal · Engineering Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Open in Chrome → Print → Save as PDF, Paper: Letter, Margins: None, Background graphics: ON */
+@page{size:Letter;margin:0}
+:root{--paper:#f7f5f0;--ink:#33312d;--muted:#7a746b;--red:#3f7a77;--hatch:#0000000c;
+  --sans:"IBM Plex Sans",Inter,system-ui,sans-serif;--mono:"IBM Plex Mono","JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--ink);font-size:10pt;line-height:1.45;background:#ddd;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.sheet{width:8.5in;height:11in;margin:0 auto 24px;background:var(--paper);position:relative;overflow:hidden;
+  background-image:linear-gradient(#00000008 1px,transparent 1px),linear-gradient(90deg,#00000008 1px,transparent 1px);background-size:18px 18px;
+  page-break-after:always;break-after:page}
+@media print{body{background:none}.sheet{margin:0}}
+.frame{position:absolute;inset:.35in;border:1.5px solid #4a4742;display:flex;flex-direction:column}
+.content{flex:1;padding:.32in .36in .2in;display:flex;flex-direction:column;gap:12px;min-height:0}
+.titleblock{display:grid;grid-template-columns:2fr 2.4fr 1fr 1fr;border-top:1.5px solid var(--ink);font:7.5pt/1.3 var(--mono)}
+.titleblock div{padding:6px 10px;border-right:1px solid var(--ink)}
+.titleblock div:last-child{border-right:0}
+.titleblock b{display:block;color:var(--muted);font-weight:400;font-size:6.5pt;letter-spacing:.08em}
+.tag{font:500 8pt var(--mono);color:var(--red);letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30pt;line-height:1.02;letter-spacing:-.02em}
+h2{font-size:20pt;line-height:1.1;letter-spacing:-.01em}
+h3{font:600 8.5pt var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:4px}
+p{margin-bottom:6px}
+ul{margin-left:14px}
+li{margin-bottom:3px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.box{border:1px solid var(--ink);padding:10px 12px;background:var(--paper)}
+.fig{border:1px solid var(--ink);background:#fff;position:relative;overflow:hidden}
+.fig img,.fig video{width:100%;height:100%;object-fit:contain;display:block}
+.fig.missing{background:repeating-linear-gradient(45deg,transparent 0 8px,var(--hatch) 8px 9px);display:grid;place-items:center}
+.fig.missing img{display:none}
+.fig.missing::after{content:"[ " attr(data-label) " ]\A images/" attr(data-file);white-space:pre;text-align:center;font:8pt/1.5 var(--mono);color:var(--muted)}
+.cap{font:7.5pt/1.4 var(--mono);color:var(--muted);margin-top:3px}
+.spec{border-collapse:collapse;font:8.5pt var(--mono);width:100%}
+.spec td{border:1px solid var(--ink);padding:4px 8px}
+.spec td:first-child{color:var(--muted);width:48%}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--ink)}
+.stats div{padding:8px 10px;border-right:1px solid var(--ink)}
+.stats div:last-child{border-right:0}
+.stats strong{display:block;font:600 15pt var(--mono);color:var(--red)}
+.stats span{font:7.5pt var(--mono);color:var(--muted)}
+.note{border-left:3px solid var(--red);padding:6px 10px;background:#eef0ea;font-size:9pt}
+.index{border:1px solid var(--ink)}
+.index div{display:grid;grid-template-columns:70px 1fr 120px;gap:10px;padding:7px 10px;border-bottom:1px solid var(--ink);font-size:9.5pt}
+.index div:last-child{border-bottom:0}
+.index .n{font:600 9pt var(--mono);color:var(--red)}
+.index .s{font:8pt var(--mono);color:var(--muted);text-align:right}
+.kv{font:8.5pt/1.7 var(--mono)}
+.kv b{color:var(--muted);font-weight:400;display:inline-block;width:92px}
+</style>
+</head>
+<body>
+
+<!-- ============ SHEET 1 · COVER ============ -->
+<section class="sheet"><div class="frame">
+  <div class="content">
+    <div class="tag">Engineering portfolio · 2026</div>
+    <h1>Chehak Aggarwal</h1>
+    <p style="font-size:13pt;max-width:44ch">I design mechanisms for robots and vehicles that work where people can't: Mars-analog terrain, the Arctic ocean, underwater.</p>
+    <div class="cols" style="margin-top:6px">
+      <div class="box kv">
+        <div><b>SCHOOL</b>UC San Diego, Jacobs School of Eng.</div>
+        <div><b>DEGREE</b>B.S. Aerospace Engineering</div>
+        <div><b>SPECIALTY</b>Astrodynamics &amp; Space Applications</div>
+        <div><b>GRAD</b>June 2029 · GPA 3.9</div>
+        <div><b>AWARD</b>Triton Scholarship ($80,000)</div>
+      </div>
+      <div class="box kv">
+        <div><b>CAD</b>Onshape · CATIA V5 · Fusion 360</div>
+        <div><b>ANALYSIS</b>FEA · MSC ADAMS · kinematics</div>
+        <div><b>FAB</b>3D printing · laser cutting · lathe</div>
+        <div><b>CODE</b>Python · MATLAB · GitLab</div>
+        <div><b>SEEKING</b>Mech. design &amp; robotics roles</div>
+      </div>
+    </div>
+    <div class="fig" style="flex:1;min-height:0" data-label="Hero image: rover arm or JELIX render" data-file="rover-full.png"><img src="images/rover-full.png" alt=""></div>
+    <h3>Contents</h3>
+    <div class="index">
+      <div><span class="n">DWG 01</span><span>JELIX: jellyfish-inspired underwater propulsion</span><span class="s">Design · simulation</span></div>
+      <div><span class="n">DWG 02</span><span>Mars rover arm: science claw &amp; electronics enclosure</span><span class="s">Built · used at URC</span></div>
+      <div><span class="n">DWG 03</span><span>Arctic surface vessel: frame, LiDAR mount, pool tests</span><span class="s">Co-design · tested</span></div>
+      <div><span class="n">DWG 04</span><span>Lead-screw gripper (adapted) · other work</span><span class="s">CAD · motion study</span></div>
+    </div>
+  </div>
+  <div class="titleblock"><div><b>NAME</b>CHEHAK AGGARWAL</div><div><b>CONTACT</b>agg.chehak@gmail.com · linkedin.com/in/chehak-aggarwal</div><div><b>REV</b>B</div><div><b>SHEET</b>1 / 5</div></div>
+</div></section>
+
+<!-- ============ SHEET 2 · JELIX ============ -->
+<section class="sheet"><div class="frame">
+  <div class="content">
+    <div class="tag">DWG 01 · Research, Genex Space · Solo design &amp; analysis · Jun 2024 – Jul 2025</div>
+    <h2>JELIX: jellyfish-inspired underwater propulsion</h2>
+    <p>A propeller-free propulsion mechanism for small underwater vehicles. A cam–follower drive with spring return snaps four ribs inward to push out a jet of water, copying the pulse of <i>Cotylorhiza tuberculata</i>. I designed the cam in CATIA V5 and simulated it in MSC ADAMS, supervised by Theja K V.</p>
+    <div class="stats"><div><strong>65 mm</strong><span>rib-tip travel X</span></div><div><strong>80 mm</strong><span>rib-tip travel Y</span></div><div><strong>0–40°</strong><span>rib stroke</span></div><div><strong>12 s</strong><span>cycle at 5 rpm</span></div></div>
+    <div class="cols" style="flex:1;min-height:0">
+      <div style="display:flex;flex-direction:column;gap:6px;min-height:0">
+        <div class="fig" style="flex:1" data-label="Labeled cutaway" data-file="jelix-labeled.png"><img src="images/jelix-labeled.png" alt=""></div>
+        <div class="cap">Cutaway: motor and gear train drive the cam; the ribs are pivoted followers.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div><h3>How it works</h3><ul><li><b>Expand:</b> the cam slowly raises the ribs and compresses the springs.</li><li><b>Contract:</b> the cam profile drops, the springs snap the ribs back, and a jet of water pushes the vehicle.</li></ul></div>
+        <div><h3>Analysis</h3><ul><li>Cam profile designed at 10° increments in CATIA V5.</li><li>MSC ADAMS multibody simulation at 5 rpm over 24 s.</li><li>Free-body model: F<sub>y</sub> on each rib produces thrust.</li></ul></div>
+        <div><h3>Why a cam</h3><p>One motor, low voltage, simple to build and maintain. Smart materials need more complex electronics.</p></div>
+      </div>
+    </div>
+    <div class="cols" style="height:2.1in">
+      <div class="fig" data-label="ADAMS plots" data-file="jelix-adams-plots.png"><img src="images/jelix-adams-plots.png" alt=""></div>
+      <div class="fig" data-label="Mechanism phases (a)–(e)" data-file="jelix-mechanism.png"><img src="images/jelix-mechanism.png" alt=""></div>
+    </div>
+    <div class="note"><b>Status: simulation only, not yet built.</b> Next: model the springs and the hydrodynamics, then print a one-rib rig and compare it against simulation.</div>
+  </div>
+  <div class="titleblock"><div><b>PROJECT</b>JELIX</div><div><b>TOOLS</b>CATIA V5 · MSC ADAMS</div><div><b>DWG</b>01</div><div><b>SHEET</b>2 / 5</div></div>
+</div></section>
+
+<!-- ============ SHEET 3 · ROVER ARM ============ -->
+<section class="sheet"><div class="frame">
+  <div class="content">
+    <div class="tag">DWG 02 · Yonder Dynamics (University Rover Challenge) · Mechanical Team · Nov 2025 – Present</div>
+    <h2>Mars rover arm: science claw &amp; electronics enclosure</h2>
+    <div class="fig" style="height:2.3in" data-label="Rover arm, labeled subsystems" data-file="rover-arm-labeled.png"><img src="images/rover-arm-labeled.png" alt=""></div>
+    <div class="cols">
+      <div>
+        <h3>1 · Science claw: designed, built, used</h3>
+        <p>The old end effector was hard to swap. I designed a <b>four-bar linkage</b> claw driven by <b>two servos</b>, with <b>replaceable fingers</b> and a direct bolt-on interface to the hand.</p>
+        <div class="note"><b>Result:</b> collected geological samples at URC 2026.</div>
+      </div>
+      <div>
+        <h3>2 · Forearm enclosure: redesigned</h3>
+        <p>The new ODrive and fuse board didn't fit; cramped wiring pressed on the fuse board and made servicing hard.</p>
+        <table class="spec"><tr><td>Length</td><td>178 → 216 mm (+21%)</td></tr><tr><td>Walls</td><td>3 mm</td></tr><tr><td>Cable exit</td><td>Enlarged for bend radius</td></tr><tr><td>Status</td><td>PLA prototype; arm redesigned</td></tr></table>
+      </div>
+    </div>
+    <div class="cols3" style="flex:1;min-height:0">
+      <div class="fig" data-label="Claw render" data-file="claw-render.png"><img src="images/claw-render.png" alt=""></div>
+      <div class="fig" data-label="Claw photo" data-file="claw-photo.jpg"><img src="images/claw-photo.jpg" alt=""></div>
+      <div class="fig" data-label="Enclosure, open" data-file="enclosure-open.png"><img src="images/enclosure-open.png" alt=""></div>
+    </div>
+    <div class="cols" style="align-items:start">
+      <div><h3>3 · Elbow FEA: analysis support</h3><p>Ran static von Mises FEA on a teammate's elbow-joint design and found stress concentrations at the mounting interfaces.</p></div>
+      <div class="fig" style="height:1.3in" data-label="Elbow FEA" data-file="fea-elbow.png"><img src="images/fea-elbow.png" alt=""></div>
+    </div>
+  </div>
+  <div class="titleblock"><div><b>PROJECT</b>ROVER ARM</div><div><b>TOOLS</b>Onshape · FEA · 3D printing</div><div><b>DWG</b>02</div><div><b>SHEET</b>3 / 5</div></div>
+</div></section>
+
+<!-- ============ SHEET 4 · USV ============ -->
+<section class="sheet"><div class="frame">
+  <div class="content">
+    <div class="tag">DWG 03 · Yonder Deep · Mechanical Team · Nov 2025 – Present</div>
+    <h2>Arctic surface vessel: frame, LiDAR mount, pool tests</h2>
+    <p>An autonomous surface vessel that will collect underwater acoustic data with a hydrophone in the Arctic Ocean. I work on its structure and sensor integration, and helped run its first pool tests.</p>
+    <div class="fig" style="height:2.8in" data-label="USV frame and pontoons" data-file="usv-frame.png"><img src="images/usv-frame.png" alt=""></div>
+    <div class="cols">
+      <div>
+        <h3>1 · Pontoon frame: co-designed</h3>
+        <table class="spec"><tr><td>Material</td><td>6061-T6 aluminum</td></tr><tr><td>Joining</td><td>Welded + bolted</td></tr><tr><td>Draft target</td><td>≈ 5 cm</td></tr><tr><td>Driver</td><td>Modular, field-serviceable</td></tr></table>
+        <p style="margin-top:6px">Co-designed with one other mechanical member, through team-wide review rounds.</p>
+      </div>
+      <div>
+        <h3>2 · LiDAR mount: designed</h3>
+        <p>Clean-sheet mount in Fusion 360 for stable sensing and a clear field of view in a marine environment.</p>
+        <h3 style="margin-top:8px">3 · Pool tests: supported</h3>
+        <ul><li>Preliminary rig, X-configuration thrusters.</li><li>Checked buoyancy, power draw, and hydrophone noise (no interference).</li><li>Test 1: one motor failed. Test 2: out-and-back run completed.</li></ul>
+      </div>
+    </div>
+    <div class="cols" style="flex:1;min-height:0">
+      <div class="fig" data-label="LiDAR mount" data-file="lidar-mount.png"><img src="images/lidar-mount.png" alt=""></div>
+      <div class="fig" data-label="Pool test" data-file="pool-test.jpg"><img src="images/pool-test.jpg" alt=""></div>
+    </div>
+  </div>
+  <div class="titleblock"><div><b>PROJECT</b>ARCTIC USV</div><div><b>TOOLS</b>Fusion 360 · 3D printing</div><div><b>DWG</b>03</div><div><b>SHEET</b>4 / 5</div></div>
+</div></section>
+
+<!-- ============ SHEET 5 · GRIPPER + OTHER ============ -->
+<section class="sheet"><div class="frame">
+  <div class="content">
+    <div class="tag">DWG 04 · Adapted design · Onshape · Oct 2026</div>
+    <h2>Lead-screw robotic gripper</h2>
+    <div class="cols" style="height:4.1in">
+      <div class="fig" data-label="Gripper render" data-file="gripper-render.png"><img src="images/gripper-render.png" alt=""></div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <p>A central lead screw drives a carriage that pushes mirrored four-bar linkages, swinging two fingertips together. I adapted an existing design and modeled it with a motion study in Onshape as a Yonder Dynamics design task.</p>
+        <div><h3>Why a lead screw</h3><ul><li>High force from a small motor.</li><li>Can be self-locking, so it holds without power.</li><li>Trade-off: slower to close than a direct servo.</li></ul></div>
+        <div class="note">Status: CAD and motion study; not manufactured. Motion video on the portfolio site.</div>
+      </div>
+    </div>
+    <h2 style="margin-top:6px">Other work</h2>
+    <div class="index">
+      <div><span class="n">HuLC '26</span><span>NASA Human Lander Challenge: co-researched T-PANS, a tunable viscoelastic damping concept for life-support noise on crewed lunar missions; wrote the Design Rationale &amp; Value section.</span><span class="s">AIAA UCSD</span></div>
+      <div><span class="n">AIAA</span><span>Project Coordinator: recruited 32 students from 57+ applicants onto four NASA competition teams (HuLC, RASC-AL, Blue Skies, ORBITS).</span><span class="s">Jun 2026 –</span></div>
+      <div><span class="n">INTERN</span><span>Big Data Rhino: Python analysis of satellite data for proof-of-concept products; taught AI classes to 48 participants.</span><span class="s">Summer 2026</span></div>
+      <div><span class="n">ALSO</span><span>International Aerospace Olympiad, 2nd rank · competitive boxer (South Asian Games gold) · digital artist (64k followers)</span><span class="s">—</span></div>
+    </div>
+  </div>
+  <div class="titleblock"><div><b>PROJECT</b>GRIPPER · OTHER</div><div><b>PORTFOLIO</b>[username].github.io</div><div><b>DWG</b>04</div><div><b>SHEET</b>5 / 5</div></div>
+</div></section>
+
+<script>
+document.querySelectorAll('.fig').forEach(function(f){var i=f.querySelector('img');if(!i){f.classList.add('missing');return}
+ var m=function(){f.classList.add('missing')};if(i.complete&&i.naturalWidth===0)m();i.addEventListener('error',m)});
+</script>
+</body>
+</html>
