@@ -163,3 +163,21 @@ table.spec td:first-child{color:var(--muted);width:42%}
   body{font-size:16px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+
+/* ---------- image sizing (v2): no blank bands ----------
+   • Big single images and page-top images keep their own shape.
+   • Home cards, the featured card and side-by-side pairs fill a fixed frame (edges may crop slightly).
+   • Add class "fit" to any <figure class="fig"> to show the whole image instead of cropping. */
+.fig img,.fig video{width:100%;height:auto;object-fit:contain}
+.hero-fig .fig{min-height:0}
+.hero-fig .fig img,.hero-fig .fig video{max-height:600px;width:100%;height:auto;object-fit:contain}
+.figs.one .fig{aspect-ratio:auto}
+.figs.one .fig img,.figs.one .fig video{max-height:640px}
+.card .fig img,.card .fig video,
+.feat>.fig img,.feat>.fig video,
+.figs:not(.one) .fig img,.figs:not(.one) .fig video,
+.phead>.fig img{height:100%;object-fit:cover}
+.fig.fit img,.fig.fit video{object-fit:contain!important}
+.figs.one .fig.missing{aspect-ratio:16/9}
+.hero-fig .fig.missing{min-height:300px}
