@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mars Rover Arm · Chehak Aggarwal</title>
-<meta name="description" content="Science claw and forearm electronics enclosure for the Yonder Dynamics Mars rover (University Rover Challenge 2026).">
+<title>Yonder Dynamics · Chehak Aggarwal</title>
+<meta name="description" content="Science claw, forearm electronics enclosure, elbow FEA and a lead-screw gripper for the Yonder Dynamics Mars rover (University Rover Challenge).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,13 +20,13 @@
   <header class="phead">
     <div class="l">
       <div class="tag">DWG 02 · Yonder Dynamics · University Rover Challenge</div>
-      <h1>Mars rover arm: science claw &amp; electronics enclosure</h1>
-      <p>Yonder Dynamics is UC San Diego's Mars rover team, competing in the University Rover Challenge (URC). On the mechanical team, I own two parts of the robotic arm and support its structural analysis.</p>
+      <h1>Yonder Dynamics: Mars rover hardware</h1>
+      <p>Yonder Dynamics is UC San Diego's Mars rover team, competing in the University Rover Challenge (URC). On the mechanical team, I design parts of the robotic arm and support its structural analysis. Each section below is one of my contributions; bigger ones link to a full case study.</p>
     </div>
     <div class="tb">
       <div><b>ROLE</b><span>Mechanical Team Member</span></div>
       <div><b>DATES</b><span>Nov 2025 – Present</span></div>
-      <div><b>MY PARTS</b><span>Science claw · forearm enclosure</span></div>
+      <div><b>MY PARTS</b><span>Science claw · forearm enclosure · gripper</span></div>
       <div><b>TOOLS</b><span>Onshape · FEA · 3D printing</span></div>
       <div><b>STATUS</b><span>Claw used at URC 2026</span></div>
     </div>
@@ -35,7 +35,7 @@
 
   <div class="doc">
     <nav class="toc">
-      <a href="#claw">1 · Science claw</a><a href="#enclosure">2 · Forearm enclosure</a><a href="#fea">3 · Elbow FEA</a><a href="#next">What I'd change</a>
+      <a href="#claw">1 · Science claw</a><a href="#enclosure">2 · Forearm enclosure</a><a href="#fea">3 · Elbow FEA</a><a href="#gripper">4 · Lead-screw gripper</a><a href="#next">What I'd change</a>
     </nav>
     <main>
       <section class="sec" id="claw">
@@ -50,10 +50,7 @@
         </ul>
         <h3>Design</h3>
         <p>A <b>four-bar linkage</b> driven by <b>two servos</b>, with <b>replaceable fingers</b> so damaged or task-specific fingers can be swapped in the field without removing the claw.</p>
-        <div class="figs">
-          <figure class="fig" data-label="Claw + hand render" data-file="claw-render.png"><img src="../images/claw-render.png" alt="Science claw and hand CAD render"></figure>
-          <figure class="fig" data-label="Claw photo (built)" data-file="claw-photo.jpg"><img src="../images/claw-photo.jpg" alt="Photo of the built science claw"></figure>
-        </div>
+        <div class="figs one"><figure class="fig" data-label="Claw + hand render" data-file="claw-render.png"><img src="../images/claw-render.png" alt="Science claw and hand CAD render"></figure></div>
         <h3>Result</h3>
         <p>The claw was built and mounted on the forearm, and the team used it to collect geological samples at the University Rover Challenge 2026.</p>
         <div class="figs one"><figure class="fig" data-label="Claw collecting samples at URC 2026" data-file="claw-in-use.mp4"><video controls autoplay muted loop playsinline preload="metadata"><source src="../images/claw-in-use.mp4" type="video/mp4"></video></figure></div>
@@ -81,8 +78,19 @@
 
       <section class="sec" id="fea">
         <h2>3 · Elbow joint FEA: analysis support</h2>
-        <p>A teammate designed a new elbow joint, and I ran the static FEA (von Mises stress) to check it under arm-manipulation loads. The results showed stress concentrations at the mounting interfaces.</p>
+        <p>A teammate designed a new elbow joint (some of the team call it the shoulder). I ran a static FEA to check von Mises stress under arm-manipulation loads before the design moved forward.</p>
         <div class="figs one"><figure class="fig" data-label="Elbow von Mises stress plot" data-file="fea-elbow.png"><img src="../images/fea-elbow.png" alt="Von Mises stress plot of the elbow joint"></figure></div>
+        <h3>What it showed and what we did</h3>
+        <p>Stress gathered at the mounting interfaces. The team reviewed the plot, judged the levels acceptable, and kept the design and the planned motor placement.</p>
+        <h3>What I learned</h3>
+        <p>I didn't record the load case, material properties or safety factor at the time, so I can't show them here. Now I log the setup with every run (material, loads and where they come from, fixed faces, peak stress, safety factor), so a result can be checked and reused.</p>
+      </section>
+
+      <section class="sec" id="gripper">
+        <h2>4 · Lead-screw gripper: adapted design task</h2>
+        <div class="figs one"><figure class="fig" data-label="Gripper render" data-file="gripper-render.png"><img src="../images/gripper-render.png" alt="Lead-screw robotic gripper with four-bar linkages, CAD render"></figure></div>
+        <p>A two-finger gripper in which a central lead screw drives mirrored four-bar linkages. I adapted an existing design and modeled it with a motion study in Onshape as a Yonder Dynamics design task (Oct 2026). Not manufactured.</p>
+        <p><a class="btn" href="gripper.html">Full case study →</a></p>
       </section>
 
       <section class="sec" id="next">
@@ -90,7 +98,7 @@
         <ul>
           <li>Log the claw's grip force and the masses of the samples it picked up, so its performance is measured rather than described.</li>
           <li>Run the enclosure through a quick fit check with the real wiring harness before the final print.</li>
-          <li>Report the FEA with its full setup (material, load case, constraints) and a safety factor.</li>
+          <li>Report every FEA with its full setup and a safety factor.</li>
         </ul>
       </section>
     </main>
