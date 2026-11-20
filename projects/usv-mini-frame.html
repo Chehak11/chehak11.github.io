@@ -52,11 +52,12 @@
 
       <section class="sec" id="stock">
         <h2>Choosing the stock</h2>
-        <p>The CAD uses 3/4 × 1/2, 3/4 × 3/8 and 3/8 × 3/8 in members. McMaster sells those exact sections only as <b>solid</b> bar; hollow tube doesn't come in them. So I compared three options:</p>
+        <p>The CAD uses 3/4 × 1/2, 3/4 × 3/8 and 3/8 × 3/8 in members. McMaster sells those exact sections only as solid bar; hollow tube doesn't come in them. I compared four options:</p>
         <table class="spec">
           <tr><td>A · Solid 6063, CAD sizes <b>(chosen)</b></td><td>$148.71 · ≈ 2.5 kg. Matches the CAD exactly. The extra weight is fine with no electronics.</td></tr>
-          <tr><td>B · Solid 6063, all members 3/4 × 3/8</td><td>$116.53 · ≈ 1.9 kg. Dropped: the 15 in rails would lose about 58% of their bending stiffness, because stiffness scales with height cubed (0.375³ ÷ 0.5³ ≈ 0.42). The team kept the taller rails.</td></tr>
-          <tr><td>C · Hollow 6061, 3/4 × 3/4 × 1/16</td><td>$103.48 · ≈ 1.1 kg. Dropped: too tall for the 0.375 in printed pockets, and a 1/16 in wall can crush at bolts and can't hold a thread.</td></tr>
+          <tr><td>B · Solid 6063, every member 3/4 × 3/8</td><td>$116.53 · ≈ 2.0 kg. Dropped: the team wanted to keep the taller 3/4 × 1/2 rails. Thinner rails would lose about 58% of their vertical bending stiffness, since stiffness scales with height cubed (0.375³ ÷ 0.5³ ≈ 0.42).</td></tr>
+          <tr><td>C · Hollow 6061, 3/4 × 3/4 × 1/16</td><td>$103.48 · ≈ 1.1 kg. Not chosen: 3/4 in tall, so it doesn't fit the 0.375 in printed pockets, and the thin wall can crush at bolts. It would become an option if the pockets were widened to 0.75 in.</td></tr>
+          <tr><td>D · Hollow 6063, 3/4 × 3/4 and 1/2 × 1/2 × 1/16</td><td>≈ $75.72 · ≈ 1.3 kg. Not chosen: members get taller and the bottom bars wider than the CAD, and a 1/16 in wall can't hold a thread.</td></tr>
         </table>
         <p>I also compared 6063 against 6061 tube prices across seven sizes. 6063 was 19–41% cheaper in thin 1/16 in wall, but not always cheaper in 1/8 in wall. The trade-off: 6063 yields at about 16 ksi against about 35 ksi for 6061 (McMaster). That's why this mini frame tests geometry and assembly, not the final boat's alloy.</p>
         <div class="note">Prices are from McMaster's tables on 18 Nov 2026, before shipping, tax and fasteners. Gusset sheet (1/16 in, 6 × 12 in) adds $6.71.</div>
