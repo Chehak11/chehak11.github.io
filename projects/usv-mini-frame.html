@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¼-Scale USV Test Frame · Chehak Aggarwal</title>
+<meta name="description" content="Planning a quarter-scale aluminum test frame for Yonder Deep's Arctic surface vessel: stock selection, cut list, cost and weight trade study, buoyancy check and hardware plan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="../index.html">CHEHAK AGGARWAL</a>
+    <div class="links"><a href="../index.html#projects">Projects</a><a href="../about.html">About</a><a href="../resume.pdf" target="_blank" rel="noopener">Résumé ↗</a><a href="../portfolio.pdf" target="_blank" rel="noopener">Portfolio PDF ↗</a><a href="../index.html#contact">Contact</a></div>
+  </nav>
+
+  <header class="phead">
+    <div class="l">
+      <div class="tag"><a href="arctic-usv.html#mini-frame" style="text-decoration:none">DWG 03 · Yonder Deep</a> · Test frame · In progress</div>
+      <h1>¼-scale USV test frame: stock, cost and buoyancy</h1>
+      <p>Before the full-size Arctic vessel frame is built in hollow 6061 aluminum, the team is building a quarter-scale frame to check the joint design and the assembly. I planned how to make it with what can actually be bought: which stock to use, how to cut it, what it costs, how much it weighs and whether the pontoons can float it.</p>
+    </div>
+    <div class="tb">
+      <!-- If you made the Fusion model yourself, change MY WORK to start with "Frame CAD ·" -->
+      <div><b>MY WORK</b><span>Stock &amp; cut plan · cost/weight study · buoyancy · hardware</span></div>
+      <div><b>CONTEXT</b><span>Yonder Deep, mechanical team</span></div>
+      <div><b>DATE</b><span>Nov 2026</span></div>
+      <div><b>TOOLS</b><span>Fusion 360 · McMaster-Carr · hand calcs</span></div>
+      <div><b>STATUS</b><span>Plan final · parts not yet ordered or built</span></div>
+    </div>
+  </header>
+  <div class="hero-fig"><figure class="fig" data-label="¼-scale frame on pontoons, Fusion render" data-file="usv-mini-frame.png"><img src="../images/usv-mini-frame.png" alt="Quarter-scale USV frame of aluminum bars on two printed pontoons, Fusion 360 render"></figure></div>
+
+  <div class="doc">
+    <nav class="toc">
+      <a href="#goal">Goal</a><a href="#stock">Choosing the stock</a><a href="#cut">Cut plan</a><a href="#float">Will it float?</a><a href="#hardware">Joints &amp; hardware</a><a href="#status">Status &amp; next</a>
+    </nav>
+    <main>
+      <section class="sec" id="goal">
+        <h2>Goal and constraints</h2>
+        <table class="spec">
+          <tr><td>Purpose</td><td>Structural and assembly test only. No electronics on board.</td></tr>
+          <tr><td>Scale</td><td>¼. Stock and screws come in fixed sizes, and ¼ is the scale where the original member sections land on standard stock.</td></tr>
+          <tr><td>Supplier</td><td>McMaster-Carr only (club rule)</td></tr>
+          <tr><td>Locked dimension</td><td>0.375 in thickness for bars that bolt into the 3D-printed pontoon pockets</td></tr>
+          <tr><td>Hull</td><td>Two 3D-printed pontoons with separate nose cones</td></tr>
+        </table>
+      </section>
+
+      <section class="sec" id="stock">
+        <h2>Choosing the stock</h2>
+        <p>The CAD uses 3/4 × 1/2, 3/4 × 3/8 and 3/8 × 3/8 in members. McMaster sells those exact sections only as <b>solid</b> bar; hollow tube doesn't come in them. So I compared three options:</p>
+        <table class="spec">
+          <tr><td>A · Solid 6063, CAD sizes <b>(chosen)</b></td><td>$148.71 · ≈ 2.5 kg. Matches the CAD exactly. The extra weight is fine with no electronics.</td></tr>
+          <tr><td>B · Solid 6063, all members 3/4 × 3/8</td><td>$116.53 · ≈ 1.9 kg. Dropped: the 15 in rails would lose about 58% of their bending stiffness, because stiffness scales with height cubed (0.375³ ÷ 0.5³ ≈ 0.42). The team kept the taller rails.</td></tr>
+          <tr><td>C · Hollow 6061, 3/4 × 3/4 × 1/16</td><td>$103.48 · ≈ 1.1 kg. Dropped: too tall for the 0.375 in printed pockets, and a 1/16 in wall can crush at bolts and can't hold a thread.</td></tr>
+        </table>
+        <p>I also compared 6063 against 6061 tube prices across seven sizes. 6063 was 19–41% cheaper in thin 1/16 in wall, but not always cheaper in 1/8 in wall. The trade-off: 6063 yields at about 16 ksi against about 35 ksi for 6061 (McMaster). That's why this mini frame tests geometry and assembly, not the final boat's alloy.</p>
+        <div class="note">Prices are from McMaster's tables on 18 Nov 2026, before shipping, tax and fasteners. Gusset sheet (1/16 in, 6 × 12 in) adds $6.71.</div>
+      </section>
+
+      <section class="sec" id="cut">
+        <h2>Cut plan</h2>
+        <p>The frame needs 119 in of 3/4 × 1/2 bar, 33 in of 3/4 × 3/8 and 21 in of 3/8 × 3/8. Per foot, 8 ft bars are cheaper than 4 ft (e.g. $7.77/ft against $9.63/ft), so I nested as many cuts as possible onto one 8 ft bar.</p>
+        <ul>
+          <li><b>Band saw vs CAD:</b> the club band saw cuts to about ½ in, so parts that fit into a gap are cut long and trimmed. Lengths that chain together (rail + two bar widths = pontoon tube) are rounded as a matched pair so they still add up.</li>
+          <li><b>Diagonals:</b> 45° at both ends, so the long side is exactly 1.5 in (2 × the 0.75 in bar width) longer than the short side. Alternating the cut direction nests them on the bar with almost no waste.</li>
+          <li><b>Spare for mistakes:</b> the 8 ft bar has only about 4 in of slack, so the leftover 20 in on the 4 ft bar is kept as the backup for a ruined cut.</li>
+        </ul>
+        <div class="figs one"><figure class="fig" data-label="Cut list and stock nesting (screenshot)" data-file="usv-mini-cutlist.png"><img src="../images/usv-mini-cutlist.png" alt="Table of frame members, cut lengths and how they are nested on 8 ft and 4 ft bars"></figure></div>
+      </section>
+
+      <section class="sec" id="float">
+        <h2>Will it float?</h2>
+        <p>I read the pontoon and nose-cone volumes in Fusion <b>before</b> the inner cavity was cut, because the outer volume is what displaces water. Volume scales with the cube of length, so at ¼ scale it is 1/64 of full size:</p>
+        <table class="spec">
+          <tr><td>One pontoon</td><td>8,945.3 in³ ÷ 64 ≈ 139.8 in³</td></tr>
+          <tr><td>One nose cone</td><td>932.3 in³ ÷ 64 ≈ 14.6 in³</td></tr>
+          <tr><td>Whole hull (2 pontoons + 4 cones)</td><td>≈ 338 in³ ≈ 5.5 L → about 5.5 kg of lift fully submerged</td></tr>
+          <tr><td>Estimated mass</td><td>Frame ≈ 2.5 kg + printed plastic ≈ 1.3–1.9 kg (estimate)</td></tr>
+          <tr><td>Result</td><td>Roughly 70–80% of the hull volume underwater, before foam, gussets and screws</td></tr>
+        </table>
+        <p>It floats, but with a thin margin. Weighing the printed parts and the foam is on the to-do list before the test.</p>
+      </section>
+
+      <section class="sec" id="hardware">
+        <h2>Joints and hardware</h2>
+        <ul>
+          <li><b>One screw size:</b> M3 throughout, so there's one drill size and one set of parts to buy.</li>
+          <li><b>Aluminum screws:</b> same metal as the frame, to avoid galvanic corrosion between steel and aluminum in water. The trade-off is lower screw strength, so they're hand-tightened.</li>
+          <li><b>Nuts instead of tapped threads:</b> the bars only need clearance holes. Heat-set inserts are used only where screws go into printed parts.</li>
+          <li><b>Gussets:</b> 1/16 in aluminum plates, laser cut on the club's cutter, with hole rules set for M3 (3.4 mm clearance, ≥ 7 mm edge distance, ≥ 10 mm spacing).</li>
+        </ul>
+      </section>
+
+      <section class="sec" id="status">
+        <h2>Status and next steps</h2>
+        <div class="note"><b>In progress:</b> material and stock are decided. Parts haven't been ordered, cut or tested yet. This page will be updated with the build and test results.</div>
+        <ul>
+          <li>Settle cut precision with the team: band saw to ½ in, or CNC to exact CAD lengths.</li>
+          <li>Finalize screw lengths and counts, and price the hardware.</li>
+          <li>Weigh the printed pontoons and foam; recheck the flotation margin.</li>
+          <li>Order, cut, assemble, then run the structural and assembly test.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <footer class="foot"><a href="arctic-usv.html">← Back to Yonder Deep</a><a href="../index.html">All projects</a><a href="mailto:agg.chehak@gmail.com">agg.chehak@gmail.com</a></footer>
+</div>
+<script src="../assets/main.js"></script>
+</body>
+</html>
