@@ -63,8 +63,15 @@
         </div>
       </section>
 
+            <section class="sec" id="gimbal">
+        <h2>2 · Camera gimbal: own design, in progress</h2>
+        <p>A compact two-axis (pan and tilt) camera gimbal so the driver can look around without moving the rover or the arm. Two DYNAMIXEL servos drive a 3D-printed U-fork, with a bearing supporting the far side of the camera. I've taken it through four iterations, each shaped by team design reviews. The first parts are printed; assembly and testing are next.</p>
+        <div class="figs one"><figure class="fig" data-label="Current gimbal CAD (iteration 4)" data-file="gimbal-cad.png"><img src="../images/gimbal-cad.png" alt="Two-axis camera gimbal CAD"></figure></div>
+        <p><a class="btn" href="gimbal.html">Full case study →</a></p>
+      </section>
+
       <section class="sec" id="enclosure">
-        <h2>2 · Forearm electronics enclosure: redesign</h2>
+        <h2>3 · Forearm electronics enclosure: redesign</h2>
         <h3>Problem</h3>
         <p>The arm moved to a new ODrive motor controller and fuse board, and the old enclosure was too small. Cramped wiring caused mechanical interference, pressed on the fuse board until it shifted, and made servicing hard.</p>
         <h3>What I changed</h3>
@@ -83,7 +90,7 @@
       </section>
 
       <section class="sec" id="fea">
-        <h2>3 · Elbow joint FEA: analysis support</h2>
+        <h2>4 · Elbow joint FEA: analysis support</h2>
         <p>A teammate designed a new elbow joint (some of the team call it the shoulder). I ran a static FEA to check von Mises stress under arm-manipulation loads before the design moved forward.</p>
         <div class="figs one" style="max-width:420px;margin-left:auto;margin-right:auto"><figure class="fig" data-label="Elbow von Mises stress plot" data-file="fea-elbow.png"><img src="../images/fea-elbow.png" alt="Von Mises stress plot of the elbow joint"></figure></div>
         <p>Stress gathered at the mounting interfaces. The team reviewed the plot, judged the levels acceptable, and kept the design and the planned motor placement.</p>
@@ -92,7 +99,7 @@
       </section>
 
       <section class="sec" id="gripper">
-        <h2>4 · Lead-screw gripper</h2>
+        <h2>5 · Lead-screw gripper</h2>
         <a href="gripper.html" style="display:flex;gap:16px;align-items:center;border:1.5px solid var(--line);background:var(--paper);padding:12px;text-decoration:none;color:inherit;max-width:640px;margin:12px 0">
           <img src="../images/gripper-render.png" alt="Lead-screw gripper CAD render" onerror="this.style.visibility='hidden'" style="width:88px;height:88px;flex:none;object-fit:cover;border:1px solid var(--line);background:var(--paper-2)">
           <span style="display:flex;flex-direction:column;gap:4px;min-width:0">
