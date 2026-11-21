@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rover Camera Gimbal · Chehak Aggarwal</title>
+<meta name="description" content="A compact two-axis camera gimbal for the Yonder Dynamics Mars rover: DYNAMIXEL servos, a 3D-printed U-fork with a bearing pivot, and four design iterations driven by team review.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="../index.html">CHEHAK AGGARWAL</a>
+    <div class="links"><a href="../index.html#projects">Projects</a><a href="../about.html">About</a><a href="../resume.pdf" target="_blank" rel="noopener">Résumé ↗</a><a href="../portfolio.pdf" target="_blank" rel="noopener">Portfolio PDF ↗</a><a href="../index.html#contact">Contact</a></div>
+  </nav>
+
+  <header class="phead">
+    <div class="l">
+      <div class="tag"><a href="rover-arm.html#gimbal" style="text-decoration:none">DWG 02 · Yonder Dynamics</a> · Camera gimbal · In progress</div>
+      <h1>Rover camera gimbal: two axes, compact, 3D printed</h1>
+      <p>A two-axis (pan and tilt) camera gimbal so the rover's driver can look around without turning the whole rover or moving the arm. Two DYNAMIXEL servos drive a 3D-printed U-fork, with a bearing supporting the far side of the camera. I've taken it from first sketch to a fourth iteration, with every major change coming out of team design reviews.</p>
+    </div>
+    <div class="tb">
+      <div><b>MY WORK</b><span>Design &amp; CAD (own project)</span></div>
+      <div><b>CONTEXT</b><span>Yonder Dynamics, mechanical team</span></div>
+      <div><b>DATES</b><span>Oct 2026 – Present</span></div>
+      <div><b>TOOLS</b><span>Onshape · 3D printing · DYNAMIXEL XL430</span></div>
+      <div><b>STATUS</b><span>Iteration 4 · first parts printed · not yet assembled</span></div>
+    </div>
+  </header>
+  <div class="hero-fig"><figure class="fig" data-label="Current gimbal CAD (iteration 4)" data-file="gimbal-cad.png"><img src="../images/gimbal-cad.png" alt="Two-axis camera gimbal CAD: U-fork with centered servo, bearing on the passive arm, base servo below"></figure></div>
+
+  <div class="doc">
+    <nav class="toc">
+      <a href="#problem">Problem</a><a href="#how">How it works</a><a href="#evolution">Design evolution</a><a href="#decisions">Key decisions</a><a href="#base">Hardest constraint</a><a href="#checks">Quick checks</a><a href="#build">Fabrication</a><a href="#tests">Test plan</a><a href="#next">Status &amp; next</a>
+    </nav>
+    <main>
+      <section class="sec" id="problem">
+        <h2>Problem and requirements</h2>
+        <p>The driver needs a camera that can look side to side and up and down without turning the rover or the arm, and it has to fit among the other hardware on the rover.</p>
+        <table class="spec">
+          <tr><td>Axes</td><td>Pan (yaw, the "no" motion) and tilt (pitch, the "yes" motion)</td></tr>
+          <tr><td>Size</td><td>Compact, so it stays clear of the rover arm. The enclosure has to stay close to the current footprint.</td></tr>
+          <tr><td>Precision</td><td>Position feedback and repeatable angles</td></tr>
+          <tr><td>Build</td><td>Mainly 3D printed, with a bearing on the passive side, and stiff enough for the load</td></tr>
+          <tr><td>View</td><td>The base must not block the camera when it looks down</td></tr>
+          <tr><td>Stretch goal</td><td>IMU-based self-stabilization</td></tr>
+        </table>
+      </section>
+
+      <section class="sec" id="how">
+        <h2>How it works</h2>
+        <ul>
+          <li><b>Pan:</b> a base servo under the U-fork rotates the whole head.</li>
+          <li><b>Tilt:</b> a second servo, centered inside the U, drives one arm. The other arm pivots on an M3 screw through a small flanged bearing, so the camera is supported on both sides.</li>
+          <li><b>Camera:</b> a fisheye camera on a square plate, screwed on from the back to leave room for the wiring behind it.</li>
+          <li><b>Wiring:</b> DYNAMIXEL servos daisy-chain on one bus, so there's one cable between the servos and one cable out through a cutout.</li>
+        </ul>
+      </section>
+
+      <section class="sec" id="evolution">
+        <h2>Design evolution: four iterations</h2>
+        <table class="spec">
+          <tr><td>1 · Cantilever</td><td>Camera hung off one side of the tilt servo, based on a hobby pan-tilt bracket. <b>Problem:</b> the camera's weight sat beside the servo, loading the servo horn sideways, and nothing supported the far side. <b>Next:</b> a U-fork with the camera between the arms.</td></tr>
+          <tr><td>2 · Turret U</td><td>U-fork with the camera at the center and a large bearing on the passive side. <b>Problem:</b> the bearing made the arm bulky, the packaging wasn't slim, and the camera sat away from the rotation axis. <b>Next:</b> centered servo and a 3 mm-bore bearing.</td></tr>
+          <tr><td>3 · Centered servo (first print)</td><td>Tilt servo in the middle of the U, small bearing and M3 screw on the passive arm. <b>Problem:</b> printed holes came out tight, the U wasn't stiff enough, the base holes didn't line up, and the wires had no exit. <b>Next:</b> wire cutout, a split base, and an enclosure.</td></tr>
+          <tr><td>4 · Current</td><td>Two-part base, wire cutout, camera mounted from the back. <b>Still open:</b> stiffness of the U, the base blocking the downward view, a real camera model, and the enclosure.</td></tr>
+        </table>
+        <div class="figs one"><figure class="fig" data-label="Iterations 1 → 4 side by side" data-file="gimbal-iterations.png"><img src="../images/gimbal-iterations.png" alt="Four gimbal CAD iterations side by side, from a cantilevered camera to a centered-servo U-fork"></figure></div>
+      </section>
+
+      <section class="sec" id="decisions">
+        <h2>Key decisions</h2>
+        <table class="spec">
+          <tr><td>Servos: DYNAMIXEL XL430-W250-T</td><td>Position feedback, 4096 steps per turn (0.088°), daisy-chained on one cable, and controllable from Python. Chosen over hobby RC servos, which have no feedback.</td></tr>
+          <tr><td>Frame: 3D printed</td><td>Sheet-metal bends have a large tolerance, and printing lets me iterate quickly. The cost is stiffness, which I'm still working on.</td></tr>
+          <tr><td>Layout: U-fork</td><td>Puts the camera's weight on the tilt axis instead of hanging it off the servo horn.</td></tr>
+          <tr><td>Passive pivot: screw through a flanged bearing</td><td>Supports both sides of the camera cradle cheaply. A 3 mm bore (F623ZZ, or MF63ZZ if it needs to be smaller) matches an M3 screw and keeps the arm slim.</td></tr>
+          <tr><td>Tilt servo centered in the U</td><td>The servo is bulky for a gimbal this size, and centering it keeps the package compact.</td></tr>
+          <tr><td>Camera mounted from the back</td><td>Leaves room for rear wiring and avoids cutting a hole through the mount.</td></tr>
+        </table>
+      </section>
+
+      <section class="sec" id="base">
+        <h2>The hardest constraint: a two-part base</h2>
+        <p>The servo's mounting holes are fixed, and every screw pattern for fixing the gimbal to the rover clashed with them. Rather than keep shifting holes, I split the base into two parts: one holds the pan servo, and the other carries the mounting pattern for the rover. The two bolt together. This one constraint explains why the base looks the way it does.</p>
+        <div class="figs one"><figure class="fig" data-label="Two-part base: servo mount + rover mount" data-file="gimbal-base.png"><img src="../images/gimbal-base.png" alt="Exploded view of the two-part gimbal base"></figure></div>
+      </section>
+
+      <section class="sec" id="checks">
+        <h2>Quick checks</h2>
+        <h3>Is the tilt servo strong enough?</h3>
+        <p>Assuming a 30 g camera 30 mm off the tilt axis, the torque is 0.03 kg × 9.81 m/s² × 0.03 m ≈ <b>0.009 N·m</b>. That's under 1% of the servo's 1.4 N·m stall torque. So power isn't the problem; stiffness and fit are.</p>
+        <h3>How high does the camera need to be?</h3>
+        <p>When the camera tilts down, the bottom edge of its view eventually hits the rover base. With the lens a distance <i>d</i> from the base edge, a tilt <i>θ</i> below horizontal and a vertical field of view <i>v</i>, the lowest lens height that keeps the view clear is:</p>
+        <p style="font:500 16px var(--mono);margin:8px 0 12px">h<sub>min</sub> = d · tan(θ + v/2)</p>
+        <p>For example, d = 60 mm, θ = 30° and v = 90° give about 224 mm. Looking straight down can't be fixed with height alone; it needs a tilt limit, a narrower view, or a lens that overhangs the base edge. This is the reason for the camera-height test below.</p>
+      </section>
+
+      <section class="sec" id="build">
+        <h2>Fabrication rules</h2>
+        <ul>
+          <li><b>Printed holes come out small,</b> so clearance holes get an extra 0.2–0.3 mm. That was a team rule, adopted after the first print came out tight.</li>
+          <li><b>Threads go in heat-set inserts,</b> not printed plastic. The servo's mounting holes are M2.</li>
+          <li><b>Bearing seat:</b> print a test coupon at 10.0, 10.1 and 10.2 mm before printing the arm, since a press fit has to be tested, not trusted from CAD.</li>
+          <li><b>Print the U on its side</b> so the layers don't split under bending.</li>
+        </ul>
+      </section>
+
+      <section class="sec" id="tests">
+        <h2>Test plan</h2>
+        <p>Each test answers one question before the next print:</p>
+        <ol>
+          <li><b>Bearing fit:</b> which coupon size presses in and still spins freely?</li>
+          <li><b>Servo calibration:</b> set each servo's zero and travel limits on the bench.</li>
+          <li><b>Camera height:</b> with the real camera on the rover base, find the lowest height with a clear view.</li>
+          <li><b>Sweep:</b> run full pan and tilt; nothing should touch the enclosure or nearby hardware.</li>
+          <li><b>Footprint:</b> measure the assembly against the space allotted on the rover.</li>
+          <li><b>Stiffness:</b> check the arms and camera plate for flex or wobble.</li>
+          <li><b>Stabilization (stretch):</b> add an IMU and compare image shake with and without it.</li>
+        </ol>
+      </section>
+
+      <section class="sec" id="next">
+        <h2>Status and next steps</h2>
+        <div class="note"><b>In progress:</b> iteration 4 is in CAD and the first parts have been printed. The gimbal hasn't been assembled or tested yet. This page will be updated with the build and test results.</div>
+        <ul>
+          <li>Choose the real camera and model its actual size and mounting holes.</li>
+          <li>Design the enclosure: removable, dust-tight, with rear cable exit and a clear lens window through the full sweep.</li>
+          <li>Make the U stiffer, print the bearing coupon, then build and run the test plan.</li>
+        </ul>
+        <h3>What I'm learning so far</h3>
+        <p>Every major change came from team review: where the servo sits, how the part is made, how the wires leave. Next time, I'd record the rover's mounting space and the real camera's dimensions at the start, since the enclosure now depends on numbers I don't have yet.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="foot"><a href="rover-arm.html">← Back to Yonder Dynamics</a><a href="../index.html">All projects</a><a href="mailto:agg.chehak@gmail.com">agg.chehak@gmail.com</a></footer>
+</div>
+<script src="../assets/main.js"></script>
+</body>
+</html>
