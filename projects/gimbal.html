@@ -31,7 +31,7 @@
       <div><b>STATUS</b><span>Iteration 4 in CAD · iteration 2 printed · not yet assembled</span></div>
     </div>
   </header>
-  <div class="hero-fig"><figure class="fig" data-label="Current gimbal CAD (iteration 4)" data-file="gimbal-cad.png"><img src="../images/gimbal-cad.png" alt="Two-axis camera gimbal CAD: U-fork with centered servo, bearing on the passive arm, base servo below"></figure></div>
+  <div class="hero-fig"><figure class="fig" data-label="Current gimbal CAD (iteration 4)" data-file="gimbal-cad.png" style="--ar:0.982"><img src="../images/gimbal-cad.png" alt="Two-axis camera gimbal CAD: U-fork with centered servo, bearing on the passive arm, base servo below"></figure></div>
 
   <div class="doc">
     <nav class="toc">
@@ -65,13 +65,13 @@
       <section class="sec" id="sketches">
         <h2>From paper to print</h2>
         <p>My team lead and I worked out ideas on paper alongside the CAD. The second iteration was the first one printed, and holding the real parts showed problems the CAD hadn't: tight holes, a flexible U and misaligned base holes.</p>
-        <div class="figs" style="align-items:start">
-          <div>
-            <figure class="fig fit" data-label="Paper concept sketches" data-file="gimbal-sketches.jpg"><img src="../images/gimbal-sketches.jpg" alt="Hand-drawn concept sketches of the camera gimbal"></figure>
+        <div class="figs">
+          <div style="--ar:1.554">
+            <figure class="fig" data-label="Paper concept sketches" data-file="gimbal-sketches.jpg" style="--ar:1.554"><img src="../images/gimbal-sketches.jpg" alt="Hand-drawn concept sketches of the camera gimbal"></figure>
             <figcaption>Early concept sketches by my team lead and me.</figcaption>
           </div>
-          <div>
-            <figure class="fig fit" data-label="Printed mount, iteration 2" data-file="gimbal-print-v2.jpg"><img src="../images/gimbal-print-v2.jpg" alt="3D-printed gimbal mount parts from the second iteration"></figure>
+          <div style="--ar:1.777">
+            <figure class="fig" data-label="Printed mount, iteration 2" data-file="gimbal-print-v2.jpg" style="--ar:1.777"><img src="../images/gimbal-print-v2.jpg" alt="3D-printed gimbal mount parts from the second iteration"></figure>
             <figcaption>The printed mount from iteration 2, the first physical version.</figcaption>
           </div>
         </div>
@@ -85,7 +85,7 @@
           <tr><td>3 · Centered servo</td><td>Tilt servo in the middle of the U, small bearing and M3 screw on the passive arm. <b>Problem:</b> the wires had no exit, the servo mount looked unintentional, there was no cover, and the base screws clashed with the servo's fixed holes. <b>Next:</b> wire cutout, a split base, and a cover.</td></tr>
           <tr><td>4 · Current</td><td>Two-part base, wire cutout, camera mounted from the back, and a cover over the tilt servo (CAD). <b>Still open:</b> the full wire route, stiffness of the U, the base blocking the downward view, a real camera model, and the rest of the enclosure.</td></tr>
         </table>
-        <div class="figs one" style="max-width:480px;margin-left:auto;margin-right:auto"><figure class="fig fit" style="aspect-ratio:1/1" data-label="Iterations 1 → 4" data-file="gimbal-iterations.png"><img src="../images/gimbal-iterations.png" alt="Four gimbal CAD iterations, from a cantilevered camera to a centered-servo U-fork"></figure></div>
+        <div class="figs one"><figure class="fig" data-label="Iterations 1 → 4" data-file="gimbal-iterations.png" style="--ar:0.898"><img src="../images/gimbal-iterations.png" alt="Four gimbal CAD iterations, from a cantilevered camera to a centered-servo U-fork"></figure></div>
       </section>
 
       <section class="sec" id="decisions">
@@ -103,7 +103,7 @@
       <section class="sec" id="base">
         <h2>The hardest constraint: a two-part base</h2>
         <p>The servo's mounting holes are fixed, and every screw pattern for fixing the gimbal to the rover clashed with them. Rather than keep shifting holes, I split the base into two parts: one holds the pan servo, and the other carries the mounting pattern for the rover. The two bolt together. This one constraint explains why the base looks the way it does.</p>
-        <div class="figs one"><figure class="fig" data-label="Two-part base: servo mount + rover mount" data-file="gimbal-base.png"><img src="../images/gimbal-base.png" alt="Exploded view of the two-part gimbal base"></figure></div>
+        <div class="figs one"><figure class="fig" data-label="Two-part base: servo mount + rover mount" data-file="gimbal-base.png" style="--ar:0.589"><img src="../images/gimbal-base.png" alt="Exploded view of the two-part gimbal base"></figure></div>
       </section>
 
       <section class="sec" id="checks">
