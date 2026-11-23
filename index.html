@@ -6,7 +6,7 @@
 <title>Chehak Aggarwal · Mechanical Design & Robotics</title>
 <meta name="description" content="Chehak Aggarwal: Aerospace Engineering student at UC San Diego designing mechanisms for robots and vehicles in harsh environments: Mars rover arm, Arctic surface vessel, jellyfish-inspired propulsion.">
 <meta property="og:title" content="Chehak Aggarwal · Mechanical Design & Robotics">
-<meta property="og:description" content="Mars rover arm · Arctic surface vessel · Bio-inspired underwater propulsion">
+<meta property="og:description" content="Mars rover hardware · Arctic surface vessel · Bio-inspired underwater propulsion">
 <meta property="og:image" content="https://chehak11.github.io/images/rover.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,38 +55,37 @@
   </header>
 
   <div class="label" id="projects">01 · Featured</div>
-  <a class="feat" href="projects/jelix.html" style="text-decoration:none">
-    <figure class="fig" data-label="JELIX cutaway render" data-file="jelix-cutaway.png"><img src="images/jelix-cutaway.png" alt="JELIX underwater vehicle cutaway render showing the cam-follower propulsion mechanism"></figure>
+  <a class="feat" href="projects/rover-arm.html" style="text-decoration:none">
+    <figure class="fig" data-label="Yonder Dynamics Mars rover" data-file="rover.jpg"><img src="images/rover.jpg" alt="Yonder Dynamics Mars rover CAD"></figure>
     <div class="body">
-      <div class="tag">DWG 01 · Research · Genex Space</div>
-      <h3>JELIX: jellyfish-inspired underwater propulsion</h3>
-      <p>A propeller-free propulsion mechanism. A cam–follower drive with spring return snaps four ribs to push out a jet of water, the way a jellyfish pulses. I designed the cam in CATIA V5 and simulated the motion in MSC ADAMS.</p>
+      <div class="tag">DWG 02 · Yonder Dynamics · University Rover Challenge</div>
+      <h3>Yonder Dynamics: Mars rover hardware</h3>
+      <p>On UC San Diego's Mars rover team, I design parts of the robotic arm: a science claw that our team used at URC 2026, a redesigned forearm electronics enclosure, and a two-axis camera gimbal of my own design, now in progress.</p>
       <div class="stats">
-        <div><strong>80 mm</strong><span>rib-tip travel (sim)</span></div>
-        <div><strong>0–40°</strong><span>rib stroke</span></div>
-        <div><strong>12 s</strong><span>cycle at 5 rpm</span></div>
-        <div><strong>Sim</strong><span>design &amp; simulation study</span></div>
+        <div><strong>URC '26</strong><span>claw used in competition</span></div>
+        <div><strong>+21%</strong><span>enclosure length, 178 → 216 mm</span></div>
+        <div><strong>4</strong><span>gimbal design iterations</span></div>
+        <div><strong>3</strong><span>parts I designed</span></div>
       </div>
-      <div class="chips"><span>CATIA V5</span><span>MSC ADAMS</span><span>Kinematics</span><span>Free-body model</span></div>
+      <div class="chips"><span>Onshape</span><span>Mechanisms</span><span>FEA</span><span>3D printing</span></div>
       <span class="btn p" style="align-self:flex-start">Read the case study →</span>
     </div>
   </a>
 
-  <div class="label">02 · Team engineering</div>
+  <div class="label">02 · More projects</div>
   <div class="grid">
-    <a class="card" href="projects/rover-arm.html">
-            <figure class="fig fit" data-label="Yonder Dynamics Mars rover" data-file="rover.jpg"><img src="images/rover.jpg" alt="Yonder Dynamics Mars rover"></figure>
+    <a class="card" href="projects/jelix.html">
+      <figure class="fig" data-label="JELIX render" data-file="jelix-cutaway.png"><img src="images/jelix-cutaway.png" alt="JELIX underwater vehicle render showing the cam-follower propulsion mechanism"></figure>
       <div class="body">
-        <div class="tag">DWG 02 · Yonder Dynamics · URC 2026</div>
-               <h3>Yonder Dynamics: Mars rover hardware</h3>
+        <div class="tag">DWG 01 · Research · Genex Space</div>
+        <h3>JELIX: jellyfish-inspired underwater propulsion</h3>
         <ul>
-          <li>Four-bar, dual-servo claw that collected samples at URC 2026</li>
-          <li>Forearm enclosure redesigned: 178 → 216 mm (+21%)</li>
-          <li>Designing a two-axis camera gimbal (in progress)</li>
-          <li>FEA support on the elbow joint</li>
+          <li>Cam–follower drive with spring return, own concept</li>
+          <li>Cam designed in CATIA V5, simulated in MSC ADAMS</li>
+          <li>80 mm rib-tip travel, 0–40° stroke (simulated)</li>
         </ul>
       </div>
-      <div class="cardfoot"><div><b>ROLE</b>Mech. design</div><div><b>TOOLS</b>Onshape · FEA</div><div><b>STATUS</b>Claw built, used</div></div>
+      <div class="cardfoot"><div><b>ROLE</b>Design · analysis</div><div><b>TOOLS</b>CATIA · ADAMS</div><div><b>STATUS</b>Simulated</div></div>
     </a>
     <a class="card" href="projects/arctic-usv.html">
       <figure class="fig" data-label="USV frame render" data-file="usv-frame.png"><img src="images/usv-frame.png" alt="Arctic surface vessel frame and pontoons CAD render"></figure>
@@ -96,28 +95,24 @@
         <ul>
           <li>Co-designed 6061-T6 aluminum pontoon frame</li>
           <li>LiDAR mount designed in Fusion 360</li>
-          <li>Two pool tests: buoyancy, power, hydrophone noise</li>
+          <li>Planning a ¼-scale test frame (in progress)</li>
         </ul>
       </div>
       <div class="cardfoot"><div><b>ROLE</b>Co-design · test</div><div><b>TOOLS</b>Fusion 360</div><div><b>STATUS</b>Pool tested</div></div>
     </a>
-    <div class="card">
-      <div class="body">
-        <div class="tag">Also</div>
-        <h3>Other work</h3>
-        <div class="rows" style="border:0">
-          <div><span class="k">NASA HuLC 2026</span><span>Co-researched and co-wrote T-PANS, a tunable viscoelastic damping concept for life-support noise on crewed lunar missions; I wrote the Design Rationale &amp; Value section.</span></div>
-          <div><span class="k">AIAA UCSD</span><span>Project Coordinator: recruited 32 students from 57+ applicants onto four NASA competition teams.</span></div>
-          <div><span class="k">Big Data Rhino</span><span>Intern, summer 2026: Python analysis of satellite data for proof-of-concept products.</span></div>
-        </div>
-      </div>
-    </div>
+  </div>
+
+  <div class="label">03 · Other work</div>
+  <div class="rows">
+    <div><span class="k">NASA HuLC 2026</span><span>Co-researched and co-wrote T-PANS, a tunable viscoelastic damping concept for life-support noise on crewed lunar missions; I wrote the Design Rationale &amp; Value section.</span></div>
+    <div><span class="k">AIAA UCSD</span><span>Project Coordinator: recruited 32 students from 57+ applicants onto four NASA competition teams.</span></div>
+    <div><span class="k">Big Data Rhino</span><span>Intern, summer 2026: Python analysis of satellite data for proof-of-concept products.</span></div>
   </div>
 
   <footer class="foot" id="contact">
     <a href="mailto:agg.chehak@gmail.com">agg.chehak@gmail.com</a>
     <a href="https://www.linkedin.com/in/chehak-aggarwal/" target="_blank" rel="noopener">linkedin.com/in/chehak-aggarwal</a>
-    <span class="muted">REV B · 2026</span>
+    <span class="muted">REV C · 2026</span>
   </footer>
 </div>
 <script src="assets/main.js"></script>
