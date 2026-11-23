@@ -11,13 +11,13 @@
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --paper:#1e201f; --paper-2:#252928; --ink:#e4e0d8; --muted:#a39d93; --line:#8a857c;
-    --red:#86b8b2; --red-dark:#a3ccc7; --grid:#ffffff07; --hatch:#ffffff0e; --on-acc:#142120; --img-bg:#f4f2ee;
+    --red:#86b8b2; --red-dark:#a3ccc7; --grid:#ffffff07; --hatch:#ffffff0e; --on-acc:#142120; --img-bg:#ffffff;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
   --paper:#1e201f; --paper-2:#252928; --ink:#e4e0d8; --muted:#a39d93; --line:#8a857c;
-  --red:#86b8b2; --red-dark:#a3ccc7; --grid:#ffffff07; --hatch:#ffffff0e; --on-acc:#142120; --img-bg:#f4f2ee;
+  --red:#86b8b2; --red-dark:#a3ccc7; --grid:#ffffff07; --hatch:#ffffff0e; --on-acc:#142120; --img-bg:#ffffff;
   color-scheme:dark;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -74,8 +74,6 @@ a{color:inherit}
 
 /* ---------- figures (with graceful placeholder) ---------- */
 figure{margin:0}
-.fig{position:relative;background:var(--paper);overflow:hidden}
-.fig img,.fig video{width:100%;height:100%;object-fit:contain;background:var(--img-bg)}
 .fig.missing{display:grid;place-items:center;min-height:240px;
   background:repeating-linear-gradient(45deg,transparent 0 10px,var(--hatch) 10px 11px)}
 .fig.missing img,.fig.missing video{display:none}
@@ -85,7 +83,6 @@ figcaption{font:12px/1.5 var(--mono);color:var(--muted);padding:8px 2px 0}
 
 /* ---------- featured ---------- */
 .feat{display:grid;grid-template-columns:1.2fr 1fr;border:1.5px solid var(--line);background:var(--paper)}
-.feat>.fig{border-right:1.5px solid var(--line);min-height:320px}
 .feat .body{padding:28px;display:flex;flex-direction:column;gap:14px}
 .feat h3{font-size:30px;line-height:1.15;letter-spacing:-.01em}
 .stats{display:grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--line)}
@@ -103,7 +100,6 @@ figcaption{font:12px/1.5 var(--mono);color:var(--muted);padding:8px 2px 0}
 table.spec td{overflow-wrap:anywhere}
 .card{border:1.5px solid var(--line);background:var(--paper);display:flex;flex-direction:column;text-decoration:none;transition:transform .15s,box-shadow .15s}
 a.card:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--red)}
-.card .fig{border-bottom:1.5px solid var(--line);aspect-ratio:16/10}
 .card .body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
 .card h3{font-size:22px;line-height:1.25}
 .card ul{list-style:none;font-size:15px}
@@ -126,7 +122,6 @@ a.card:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--red)}
 .phead .l{padding:36px;border-right:1.5px solid var(--line)}
 .phead h1{font-size:clamp(32px,4.6vw,50px);line-height:1.06;letter-spacing:-.02em;margin:12px 0 14px}
 .hero-fig{border:1.5px solid var(--line);border-top:0;background:var(--img-bg)}
-.hero-fig .fig{min-height:300px}
 .doc{display:grid;grid-template-columns:200px 1fr;gap:40px;margin:48px 0}
 .toc{position:sticky;top:20px;align-self:start;font:12px/2 var(--mono)}
 .toc a{display:block;text-decoration:none;color:var(--muted)}
@@ -138,10 +133,6 @@ a.card:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--red)}
 .sec p{max-width:70ch;margin-bottom:12px}
 .sec ul{margin:0 0 12px 20px;max-width:70ch}
 .sec li{margin-bottom:6px}
-.figs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:16px 0}
-.figs .fig{border:1.5px solid var(--line);aspect-ratio:4/3}
-.figs.one{grid-template-columns:1fr}
-.figs.one .fig{aspect-ratio:16/9}
 .note{border-left:3px solid var(--red);padding:10px 16px;background:var(--paper-2);font-size:15px;margin:12px 0;max-width:70ch}
 table.spec{border-collapse:collapse;font:14px var(--mono);margin:8px 0 16px;width:100%;max-width:640px}
 table.spec td{border:1px solid var(--line);padding:8px 12px;vertical-align:top}
@@ -159,25 +150,43 @@ table.spec td:first-child{color:var(--muted);width:42%}
   .feat>.fig{border-right:0;border-bottom:1.5px solid var(--line)}
   .toc{position:static;display:flex;flex-wrap:wrap;gap:4px 16px}
   .rows>div{grid-template-columns:1fr;gap:4px}
-  .figs{grid-template-columns:1fr}
   body{font-size:16px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
 
-/* ---------- image sizing (v2): no blank bands ----------
-   • Big single images and page-top images keep their own shape.
-   • Home cards, the featured card and side-by-side pairs fill a fixed frame (edges may crop slightly).
-   • Add class "fit" to any <figure class="fig"> to show the whole image instead of cropping. */
-.fig img,.fig video{width:100%;height:auto;object-fit:contain}
-.hero-fig .fig{min-height:0}
-.hero-fig .fig img,.hero-fig .fig video{max-height:600px;width:100%;height:auto;object-fit:contain}
-.figs.one .fig{aspect-ratio:auto}
-.figs.one .fig img,.figs.one .fig video{max-height:640px}
-.card .fig img,.card .fig video,
-.feat>.fig img,.feat>.fig video,
-.figs:not(.one) .fig img,.figs:not(.one) .fig video,
-.phead>.fig img{height:100%;object-fit:cover}
-.fig.fit img,.fig.fit video{object-fit:contain!important}
-.figs.one .fig.missing{aspect-ratio:16/9}
-.hero-fig .fig.missing{min-height:300px}
+/* ---------- images (v3): every frame matches its picture ----------
+   Rules, so the whole site stays consistent:
+   1. Each figure's box takes the picture's own shape (--ar = width / height), so there are no empty bands.
+   2. Pictures side by side (.figs) share one height; widths follow their shapes, so edges line up.
+   3. A picture on its own (.figs.one) is never taller than --fh, and is centered.
+   4. Page-top pictures sit in one fixed-height white band on every project page.
+   5. Renders sit on white (their own background); photos fill their box (class "photo"). */
+:root{--fh:420px}
+.fig{position:relative;overflow:hidden;background:var(--img-bg);aspect-ratio:var(--ar,1.6)}
+.fig img,.fig video{display:block;width:100%;height:100%;object-fit:contain;background:var(--img-bg)}
+.fig.photo img,.fig.photo video{object-fit:cover}
+.figs{display:flex;gap:16px;margin:18px 0;align-items:flex-start}
+.figs>*{flex:var(--ar,1.6) 1 0;min-width:0}
+.figs .fig{border:1.5px solid var(--line)}
+.figs.one{display:block}
+.figs.one>*{width:min(100%,calc(var(--ar,1.6) * var(--fh)));margin:0 auto}
+.figs.stack{display:grid;gap:12px;max-width:680px;margin-left:auto;margin-right:auto}
+.figs + figcaption{margin-top:-10px;text-align:center}
+.hero-fig{border:1.5px solid var(--line);border-top:0;background:var(--img-bg)}
+.hero-fig .fig{aspect-ratio:auto;height:clamp(240px,36vw,420px)}
+.card .fig{aspect-ratio:16/10;border-bottom:1.5px solid var(--line)}
+.feat>.fig{aspect-ratio:auto;min-height:340px;border-right:1.5px solid var(--line)}
+.phead>.fig{aspect-ratio:auto;min-height:320px}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.cols2 h3{margin-top:4px}
+.fig.missing{aspect-ratio:var(--ar,1.6)}
+.hero-fig .fig.missing,.feat>.fig.missing,.phead>.fig.missing{aspect-ratio:auto}
+@media (max-width:860px){
+  .figs{flex-direction:column}
+  .figs>*{flex:none;width:100%}
+  .figs.one>*{width:min(100%,calc(var(--ar,1.6) * 340px))}
+  .cols2{grid-template-columns:1fr;gap:0}
+  .feat>.fig{border-right:0;min-height:260px}
+  .hero-fig .fig{height:clamp(200px,60vw,320px)}
+}
