@@ -134,9 +134,9 @@ a.card:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--red)}
 .sec ul{margin:0 0 12px 20px;max-width:70ch}
 .sec li{margin-bottom:6px}
 .note{border-left:3px solid var(--red);padding:10px 16px;background:var(--paper-2);font-size:15px;margin:12px 0;max-width:70ch}
-table.spec{border-collapse:collapse;font:14px var(--mono);margin:8px 0 16px;width:100%;max-width:640px}
+table.spec{border-collapse:collapse;font:14px var(--mono);margin:8px 0 16px;width:100%}
 table.spec td{border:1px solid var(--line);padding:8px 12px;vertical-align:top}
-table.spec td:first-child{color:var(--muted);width:42%}
+table.spec td:first-child{color:var(--muted);width:32%}
 
 /* ---------- footer ---------- */
 .foot{margin:64px 0 0;border-top:1.5px solid var(--line);padding:24px 0 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font:13px var(--mono)}
@@ -190,3 +190,11 @@ table.spec td:first-child{color:var(--muted);width:42%}
   .feat>.fig{border-right:0;min-height:260px}
   .hero-fig .fig{height:clamp(200px,60vw,320px)}
 }
+
+/* text beside a tall, narrow picture */
+.side{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;margin:8px 0}
+.side>.fig{height:380px;width:auto;border:1.5px solid var(--line)}
+.side p{max-width:none}
+.figs figcaption{text-align:left}
+.sec ol{margin:0 0 12px 20px}
+@media (max-width:860px){.side{grid-template-columns:1fr}.side>.fig{height:300px;justify-self:center}}
