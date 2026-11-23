@@ -28,14 +28,14 @@
       <div><b>CONTEXT</b><span>Yonder Dynamics, mechanical team</span></div>
       <div><b>DATES</b><span>Oct 2026 – Present</span></div>
       <div><b>TOOLS</b><span>Onshape · 3D printing · DYNAMIXEL XL430</span></div>
-      <div><b>STATUS</b><span>Iteration 4 · first parts printed · not yet assembled</span></div>
+      <div><b>STATUS</b><span>Iteration 4 in CAD · iteration 2 printed · not yet assembled</span></div>
     </div>
   </header>
   <div class="hero-fig"><figure class="fig" data-label="Current gimbal CAD (iteration 4)" data-file="gimbal-cad.png"><img src="../images/gimbal-cad.png" alt="Two-axis camera gimbal CAD: U-fork with centered servo, bearing on the passive arm, base servo below"></figure></div>
 
   <div class="doc">
     <nav class="toc">
-      <a href="#problem">Problem</a><a href="#how">How it works</a><a href="#evolution">Design evolution</a><a href="#decisions">Key decisions</a><a href="#base">Hardest constraint</a><a href="#checks">Quick checks</a><a href="#build">Fabrication</a><a href="#tests">Test plan</a><a href="#next">Status &amp; next</a>
+      <a href="#problem">Problem</a><a href="#how">How it works</a><a href="#sketches">From paper to print</a><a href="#evolution">Design evolution</a><a href="#decisions">Key decisions</a><a href="#base">Hardest constraint</a><a href="#checks">Quick checks</a><a href="#build">Fabrication</a><a href="#tests">Test plan</a><a href="#next">Status &amp; next</a>
     </nav>
     <main>
       <section class="sec" id="problem">
@@ -57,19 +57,35 @@
           <li><b>Pan:</b> a base servo under the U-fork rotates the whole head.</li>
           <li><b>Tilt:</b> a second servo, centered inside the U, drives one arm. The other arm pivots on an M3 screw through a small flanged bearing, so the camera is supported on both sides.</li>
           <li><b>Camera:</b> a fisheye camera on a square plate, screwed on from the back to leave room for the wiring behind it.</li>
-          <li><b>Wiring:</b> DYNAMIXEL servos daisy-chain on one bus, so there's one cable between the servos and one cable out through a cutout.</li>
+          <li><b>Servo cover:</b> a cover over the tilt servo protects it and gives the head a cleaner, more intentional look (CAD only so far).</li>
+          <li><b>Wiring:</b> DYNAMIXEL servos daisy-chain on one bus, so there's one cable between the servos and one cable out through a cutout. I'm working on the full cable route through the moving joints now.</li>
         </ul>
+      </section>
+
+      <section class="sec" id="sketches">
+        <h2>From paper to print</h2>
+        <p>My team lead and I worked out ideas on paper alongside the CAD. The second iteration was the first one printed, and holding the real parts showed problems the CAD hadn't: tight holes, a flexible U and misaligned base holes.</p>
+        <div class="figs" style="align-items:start">
+          <div>
+            <figure class="fig fit" data-label="Paper concept sketches" data-file="gimbal-sketches.jpg"><img src="../images/gimbal-sketches.jpg" alt="Hand-drawn concept sketches of the camera gimbal"></figure>
+            <figcaption>Early concept sketches by my team lead and me.</figcaption>
+          </div>
+          <div>
+            <figure class="fig fit" data-label="Printed mount, iteration 2" data-file="gimbal-print-v2.jpg"><img src="../images/gimbal-print-v2.jpg" alt="3D-printed gimbal mount parts from the second iteration"></figure>
+            <figcaption>The printed mount from iteration 2, the first physical version.</figcaption>
+          </div>
+        </div>
       </section>
 
       <section class="sec" id="evolution">
         <h2>Design evolution: four iterations</h2>
         <table class="spec">
           <tr><td>1 · Cantilever</td><td>Camera hung off one side of the tilt servo, based on a hobby pan-tilt bracket. <b>Problem:</b> the camera's weight sat beside the servo, loading the servo horn sideways, and nothing supported the far side. <b>Next:</b> a U-fork with the camera between the arms.</td></tr>
-          <tr><td>2 · Turret U</td><td>U-fork with the camera at the center and a large bearing on the passive side. <b>Problem:</b> the bearing made the arm bulky, the packaging wasn't slim, and the camera sat away from the rotation axis. <b>Next:</b> centered servo and a 3 mm-bore bearing.</td></tr>
-          <tr><td>3 · Centered servo (first print)</td><td>Tilt servo in the middle of the U, small bearing and M3 screw on the passive arm. <b>Problem:</b> printed holes came out tight, the U wasn't stiff enough, the base holes didn't line up, and the wires had no exit. <b>Next:</b> wire cutout, a split base, and an enclosure.</td></tr>
-          <tr><td>4 · Current</td><td>Two-part base, wire cutout, camera mounted from the back. <b>Still open:</b> stiffness of the U, the base blocking the downward view, a real camera model, and the enclosure.</td></tr>
+          <tr><td>2 · Turret U (first print)</td><td>U-fork with the camera at the center and a large bearing on the passive side. <b>Problem:</b> the bearing made the arm bulky, the packaging wasn't slim, and the camera sat away from the rotation axis. The printed parts also showed that holes came out tight, the U wasn't stiff enough, and the base holes didn't line up. <b>Next:</b> centered servo, a 3 mm-bore bearing, and an extra 0.2–0.3 mm on printed holes.</td></tr>
+          <tr><td>3 · Centered servo</td><td>Tilt servo in the middle of the U, small bearing and M3 screw on the passive arm. <b>Problem:</b> the wires had no exit, the servo mount looked unintentional, there was no cover, and the base screws clashed with the servo's fixed holes. <b>Next:</b> wire cutout, a split base, and a cover.</td></tr>
+          <tr><td>4 · Current</td><td>Two-part base, wire cutout, camera mounted from the back, and a cover over the tilt servo (CAD). <b>Still open:</b> the full wire route, stiffness of the U, the base blocking the downward view, a real camera model, and the rest of the enclosure.</td></tr>
         </table>
-               <div class="figs one"><figure class="fig" data-label="Iterations 1 → 4 side by side" data-file="gimbal-iterations.png"><img src="../images/gimbal-iterations.png" alt="Four gimbal CAD iterations side by side, from a cantilevered camera to a centered-servo U-fork"></figure></div>
+        <div class="figs one" style="max-width:480px;margin-left:auto;margin-right:auto"><figure class="fig fit" style="aspect-ratio:1/1" data-label="Iterations 1 → 4" data-file="gimbal-iterations.png"><img src="../images/gimbal-iterations.png" alt="Four gimbal CAD iterations, from a cantilevered camera to a centered-servo U-fork"></figure></div>
       </section>
 
       <section class="sec" id="decisions">
@@ -103,7 +119,7 @@
       <section class="sec" id="build">
         <h2>Fabrication rules</h2>
         <ul>
-          <li><b>Printed holes come out small,</b> so clearance holes get an extra 0.2–0.3 mm. That was a team rule, adopted after the first print came out tight.</li>
+          <li><b>Printed holes come out small,</b> so clearance holes get an extra 0.2–0.3 mm. That was a team rule, adopted after the iteration 2 print came out tight.</li>
           <li><b>Threads go in heat-set inserts,</b> not printed plastic. The servo's mounting holes are M2.</li>
           <li><b>Bearing seat:</b> print a test coupon at 10.0, 10.1 and 10.2 mm before printing the arm, since a press fit has to be tested, not trusted from CAD.</li>
           <li><b>Print the U on its side</b> so the layers don't split under bending.</li>
@@ -126,8 +142,9 @@
 
       <section class="sec" id="next">
         <h2>Status and next steps</h2>
-        <div class="note"><b>In progress:</b> iteration 4 is in CAD and the first parts have been printed. The gimbal hasn't been assembled or tested yet. This page will be updated with the build and test results.</div>
+        <div class="note"><b>In progress:</b> iteration 4, including the servo cover, is in CAD; iteration 2 was printed. The gimbal hasn't been assembled or tested yet. This page will be updated with the build and test results.</div>
         <ul>
+          <li>Finish routing the wires through the pan and tilt joints, so cables don't snag or strain across the full sweep. <i>(Working on this now.)</i></li>
           <li>Choose the real camera and model its actual size and mounting holes.</li>
           <li>Design the enclosure: removable, dust-tight, with rear cable exit and a clear lens window through the full sweep.</li>
           <li>Make the U stiffer, print the bearing coupon, then build and run the test plan.</li>
