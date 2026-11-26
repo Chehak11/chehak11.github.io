@@ -19,23 +19,23 @@
 
   <header class="phead">
     <div class="l">
-      <div class="tag"><a href="rover-arm.html#gimbal" style="text-decoration:none">DWG 02 · Yonder Dynamics</a> · Camera gimbal · In progress</div>
+      <div class="tag"><a href="rover-arm.html#gimbal" style="text-decoration:none">DWG 02 · Yonder Dynamics</a> · Camera gimbal · Prototype built</div>
       <h1>Rover camera gimbal: two axes, compact, 3D printed</h1>
-      <p>A two-axis (pan and tilt) camera gimbal so the rover's driver can look around without turning the whole rover or moving the arm. Two DYNAMIXEL servos drive a 3D-printed U-fork, with a bearing supporting the far side of the camera. I've taken it from first sketch to a fourth iteration, with every major change coming out of team design reviews.</p>
+      <p>A two-axis (pan and tilt) camera gimbal so the rover's driver can look around without turning the whole rover or moving the arm. Two DYNAMIXEL servos drive a 3D-printed U-fork, with a bearing supporting the far side of the camera. I took it from first sketch to a printed, assembled prototype in four iterations, with every major change coming out of team design reviews.</p>
     </div>
     <div class="tb">
       <div><b>MY WORK</b><span>Design &amp; CAD (own project)</span></div>
       <div><b>CONTEXT</b><span>Yonder Dynamics, mechanical team</span></div>
       <div><b>DATES</b><span>Oct 2026 – Present</span></div>
       <div><b>TOOLS</b><span>Onshape · 3D printing · DYNAMIXEL XL430</span></div>
-      <div><b>STATUS</b><span>Iteration 4 in CAD · iteration 2 printed · not yet assembled</span></div>
+      <div><b>STATUS</b><span>Prototype printed &amp; assembled · next: rover integration</span></div>
     </div>
   </header>
   <div class="hero-fig"><figure class="fig" data-label="Current gimbal CAD (iteration 4)" data-file="gimbal-cad.png" style="--ar:0.982"><img src="../images/gimbal-cad.png" alt="Two-axis camera gimbal CAD: U-fork with centered servo, bearing on the passive arm, base servo below"></figure></div>
 
   <div class="doc">
     <nav class="toc">
-      <a href="#problem">Problem</a><a href="#how">How it works</a><a href="#sketches">From paper to print</a><a href="#evolution">Design evolution</a><a href="#decisions">Key decisions</a><a href="#base">Hardest constraint</a><a href="#checks">Quick checks</a><a href="#build">Fabrication</a><a href="#tests">Test plan</a><a href="#next">Status &amp; next</a>
+      <a href="#problem">Problem</a><a href="#how">How it works</a><a href="#sketches">From paper to print</a><a href="#evolution">Design evolution</a><a href="#prototype">The prototype</a><a href="#decisions">Key decisions</a><a href="#base">Hardest constraint</a><a href="#checks">Quick checks</a><a href="#build">Fabrication</a><a href="#tests">Test plan</a><a href="#next">Status &amp; next</a>
     </nav>
     <main>
       <section class="sec" id="problem">
@@ -57,7 +57,7 @@
           <li><b>Pan:</b> a base servo under the U-fork rotates the whole head.</li>
           <li><b>Tilt:</b> a second servo, centered inside the U, drives one arm. The other arm pivots on an M3 screw through a small flanged bearing, so the camera is supported on both sides.</li>
           <li><b>Camera:</b> a fisheye camera on a square plate, screwed on from the back to leave room for the wiring behind it.</li>
-          <li><b>Servo cover:</b> a cover over the tilt servo protects it and gives the head a cleaner, more intentional look (CAD only so far).</li>
+          <li><b>Servo cover:</b> a cover over the tilt servo protects it and gives the head a cleaner, more intentional look.</li>
           <li><b>Wiring:</b> DYNAMIXEL servos daisy-chain on one bus, so there's one cable between the servos and one cable out through a cutout. I'm working on the full cable route through the moving joints now.</li>
         </ul>
       </section>
@@ -83,13 +83,22 @@
           <tr><td>1 · Cantilever</td><td>Camera hung off one side of the tilt servo, based on a hobby pan-tilt bracket. <b>Problem:</b> the camera's weight sat beside the servo, loading the servo horn sideways, and nothing supported the far side. <b>Next:</b> a U-fork with the camera between the arms.</td></tr>
           <tr><td>2 · Turret U (first print)</td><td>U-fork with the camera at the center and a large bearing on the passive side. <b>Problem:</b> the bearing made the arm bulky, the packaging wasn't slim, and the camera sat away from the rotation axis. The printed parts also showed that holes came out tight, the U wasn't stiff enough, and the base holes didn't line up. <b>Next:</b> centered servo, a 3 mm-bore bearing, and an extra 0.2–0.3 mm on printed holes.</td></tr>
           <tr><td>3 · Centered servo</td><td>Tilt servo in the middle of the U, small bearing and M3 screw on the passive arm. <b>Problem:</b> the wires had no exit, the servo mount looked unintentional, there was no cover, and the base screws clashed with the servo's fixed holes. <b>Next:</b> wire cutout, a split base, and a cover.</td></tr>
-          <tr><td>4 · Current</td><td>Two-part base, wire cutout, camera mounted from the back, and a cover over the tilt servo (CAD). <b>Still open:</b> the full wire route, stiffness of the U, the base blocking the downward view, a real camera model, and the rest of the enclosure.</td></tr>
+          <tr><td>4 · Final (built)</td><td>Two-part base, wire cutout, camera mounted from the back, and a cover over the tilt servo. <b>Result:</b> after reworking the tolerances from the first print, I printed and assembled it, and the parts fit together. <b>Still to check on the rover:</b> camera height over the base, the full pan and tilt sweep, and stiffness.</td></tr>
         </table>
         <div class="figs">
           <div style="--ar:0.883"><figure class="fig" data-label="Iteration 1" data-file="gimbal-iter-1.png" style="--ar:0.883"><img src="../images/gimbal-iter-1.png" alt="Gimbal CAD, iteration 1"></figure><figcaption>1 · Cantilever</figcaption></div>
           <div style="--ar:0.883"><figure class="fig" data-label="Iteration 2" data-file="gimbal-iter-2.png" style="--ar:0.883"><img src="../images/gimbal-iter-2.png" alt="Gimbal CAD, iteration 2"></figure><figcaption>2 · Turret U (first print)</figcaption></div>
           <div style="--ar:0.883"><figure class="fig" data-label="Iteration 3" data-file="gimbal-iter-3.png" style="--ar:0.883"><img src="../images/gimbal-iter-3.png" alt="Gimbal CAD, iteration 3"></figure><figcaption>3 · Centered servo</figcaption></div>
-          <div style="--ar:0.883"><figure class="fig" data-label="Iteration 4" data-file="gimbal-iter-4.png" style="--ar:0.883"><img src="../images/gimbal-iter-4.png" alt="Gimbal CAD, iteration 4"></figure><figcaption>4 · Current</figcaption></div>
+          <div style="--ar:0.883"><figure class="fig" data-label="Iteration 4" data-file="gimbal-iter-4.png" style="--ar:0.883"><img src="../images/gimbal-iter-4.png" alt="Gimbal CAD, iteration 4"></figure><figcaption>4 · Final (built)</figcaption></div>
+        </div>
+      </section>
+
+      <section class="sec" id="prototype">
+        <h2>The prototype: printed and assembled</h2>
+        <p>Iteration 4 is printed and assembled, including the cover over the tilt servo. The first print (iteration 2) failed on tolerances: holes came out tight and the base holes didn't line up. I reworked the clearances and the base for this version, and it went together as designed. My part is done until integration; next, it goes on the rover and the electrical and software teams wire and program it.</p>
+        <div class="figs">
+          <div style="--ar:1.226"><figure class="fig photo" data-label="Assembled gimbal prototype" data-file="gimbal-prototype.jpg" style="--ar:1.226"><img src="../images/gimbal-prototype.jpg" alt="The assembled green 3D-printed camera gimbal prototype held in hand"></figure><figcaption>The assembled prototype (iteration 4).</figcaption></div>
+          <div style="--ar:1.778"><figure class="fig photo" data-label="Prototype walkaround video" data-file="gimbal-prototype.mp4" style="--ar:1.778"><video controls autoplay muted loop playsinline preload="metadata"><source src="../images/gimbal-prototype.mp4" type="video/mp4"></video></figure><figcaption>A quick look around the build. It isn't powered yet.</figcaption></div>
         </div>
       </section>
 
@@ -139,7 +148,7 @@
 
       <section class="sec" id="tests">
         <h2>Test plan</h2>
-        <p>In this order, so each test answers one question before the next print:</p>
+        <p>These run once the gimbal is on the rover and wired, in this order:</p>
         <ul>
           <li><b>Bearing fit:</b> which coupon size presses in and still spins freely?</li>
           <li><b>Servo calibration:</b> set each servo's zero and travel limits on the bench.</li>
@@ -153,15 +162,14 @@
 
       <section class="sec" id="next">
         <h2>Status and next steps</h2>
-        <div class="note"><b>In progress:</b> iteration 4, including the servo cover, is in CAD; iteration 2 was printed. The gimbal hasn't been assembled or tested yet. This page will be updated with the build and test results.</div>
+        <div class="note"><b>Status:</b> prototype printed and assembled. Not yet mounted on the rover, powered or tested. This page will be updated with the integration and test results.</div>
         <ul>
-          <li>Finish routing the wires through the pan and tilt joints, so cables don't snag or strain across the full sweep. <i>(Working on this now.)</i></li>
-          <li>Choose the real camera and model its actual size and mounting holes.</li>
-          <li>Design the enclosure: removable, dust-tight, with rear cable exit and a clear lens window through the full sweep.</li>
-          <li>Make the U stiffer, print the bearing coupon, then build and run the test plan.</li>
+          <li>Mount the gimbal on the rover.</li>
+          <li>Electrical and software teams wire the servos and set up control.</li>
+          <li>Run the test plan above, and fix anything integration turns up.</li>
         </ul>
-        <h3>What I'm learning so far</h3>
-        <p>Every major change came from team review: where the servo sits, how the part is made, how the wires leave. Next time, I'd record the rover's mounting space and the real camera's dimensions at the start, since the enclosure now depends on numbers I don't have yet.</p>
+        <h3>What I learned</h3>
+        <p>Every major change came from team review: where the servo sits, how the part is made, how the wires leave. Next time, I'd record the rover's mounting space and the real camera's dimensions at the start, since the enclosure depended on those numbers. And a physical print catches problems CAD doesn't: the failed first print is why the final one fit.</p>
       </section>
     </main>
   </div>
