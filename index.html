@@ -12,8 +12,40 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<script>
+/* Intro: show once per visitor; never for reduced motion or links to a section. */
+(function(){try{if(localStorage.getItem('introSeen')||matchMedia('(prefers-reduced-motion: reduce)').matches||location.hash){document.documentElement.classList.add('no-intro')}}catch(e){document.documentElement.classList.add('no-intro')}})();
+</script>
 </head>
 <body>
+<div class="intro" id="intro" aria-label="Intro">
+  <div class="icard">
+    <svg class="art rocket" viewBox="0 0 220 430" aria-hidden="true">
+      <g class="draft">
+        <line class="d c" pathLength="1" x1="100" y1="6" x2="100" y2="350"/>
+        <path class="d" pathLength="1" d="M100 22 C120 52 128 86 128 112 L72 112 C72 86 80 52 100 22 Z" style="--t:.15s"/>
+        <path class="d" pathLength="1" d="M72 112 L72 300 L128 300 L128 112" style="--t:.35s"/>
+        <line class="d" pathLength="1" x1="72" y1="200" x2="128" y2="200" style="--t:.55s"/>
+        <circle class="d" pathLength="1" cx="100" cy="152" r="10" style="--t:.6s"/>
+        <path class="d" pathLength="1" d="M72 248 L42 318 L42 334 L72 300" style="--t:.7s"/>
+        <path class="d" pathLength="1" d="M128 248 L158 318 L158 334 L128 300" style="--t:.7s"/>
+        <path class="d" pathLength="1" d="M86 300 L79 332 L121 332 L114 300" style="--t:.85s"/>
+        <g class="dim">
+          <line x1="186" y1="22" x2="186" y2="332"/><line x1="178" y1="22" x2="194" y2="22"/><line x1="178" y1="332" x2="194" y2="332"/>
+          <line x1="42" y1="372" x2="158" y2="372"/><line x1="42" y1="364" x2="42" y2="380"/><line x1="158" y1="364" x2="158" y2="380"/>
+          <text x="196" y="182">L</text><text x="96" y="394">D</text>
+        </g>
+      </g>
+      <path class="flame" d="M84 334 Q100 420 116 334 Z"/>
+    </svg>
+    <div>
+      <div class="tag">Engineering portfolio</div>
+      <h1 class="iname">Chehak Aggarwal</h1>
+      <div class="isub">Mechanical design · Robotics · Aerospace</div>
+    </div>
+  </div>
+  <button class="btn iskip" id="intro-skip">Skip →</button>
+</div>
 <div class="wrap">
   <nav class="nav">
     <a class="brand" href="index.html">CHEHAK AGGARWAL</a>
@@ -60,7 +92,7 @@
     <div class="body">
       <div class="tag">DWG 02 · Yonder Dynamics · University Rover Challenge</div>
       <h3>Yonder Dynamics: Mars rover hardware</h3>
-      <p>On UC San Diego's Mars rover team, I design parts of the robotic arm: a science claw that our team used at URC 2026, a redesigned forearm electronics enclosure, and a two-axis camera gimbal of my own design, now in progress.</p>
+      <p>On UC San Diego's Mars rover team, I design parts of the robotic arm: a science claw that our team used at URC 2026, a redesigned forearm electronics enclosure, and a two-axis camera gimbal of my own design, now printed and assembled.</p>
       <div class="stats">
         <div><strong>URC '26</strong><span>claw used in competition</span></div>
         <div><strong>+21%</strong><span>enclosure length, 178 → 216 mm</span></div>
@@ -112,9 +144,22 @@
   <footer class="foot" id="contact">
     <a href="mailto:agg.chehak@gmail.com">agg.chehak@gmail.com</a>
     <a href="https://www.linkedin.com/in/chehak-aggarwal/" target="_blank" rel="noopener">linkedin.com/in/chehak-aggarwal</a>
+    <a href="#" id="replay-intro" class="muted">▶ Replay intro</a>
     <span class="muted">REV C · 2026</span>
   </footer>
 </div>
+<script>
+(function(){var el=document.getElementById('intro');if(!el)return;
+ if(document.documentElement.classList.contains('no-intro')){el.remove();return}
+ try{localStorage.setItem('introSeen','1')}catch(e){}
+ var done=function(){if(!el.isConnected)return;el.classList.add('gone');setTimeout(function(){el.remove()},500)};
+ document.getElementById('intro-skip').addEventListener('click',done);
+ el.addEventListener('click',function(e){if(e.target===el)done()});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape')done()},{once:true});
+ setTimeout(done,3400);
+})();
+document.getElementById('replay-intro')&&document.getElementById('replay-intro').addEventListener('click',function(e){e.preventDefault();try{localStorage.removeItem('introSeen')}catch(x){}location.href=location.pathname});
+</script>
 <script src="assets/main.js"></script>
 </body>
 </html>
